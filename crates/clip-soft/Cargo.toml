@@ -1,0 +1,10 @@
+[package]
+name = "clip-soft"
+description = "Static soft-knee clippers made alias-poor at 1x with antiderivative anti-aliasing"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+publish = false
+
+[dependencies]
+clip-api = { path = "../clip-api" }

@@ -1,0 +1,12 @@
+[package]
+name = "clip"
+description = "OpenClip Multiband's clip section: every clipping engine behind one olm-api Module"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+publish = false
+
+[dependencies]
+olm-api = { path = "../api" }
+clip-api = { path = "../clip-api" }
+clip-master = { path = "../clip-master" }

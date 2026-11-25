@@ -1,0 +1,7 @@
+[package]
+name = "clip-api"
+description = "The contract every OpenClip Multiband clipping engine implements, plus the shared measurement bench"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+publish = false

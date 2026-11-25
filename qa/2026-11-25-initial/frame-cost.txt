@@ -1,0 +1,4 @@
+4 bands, panel closed (1080x768 @2x):  15.24 ms/frame
+4 bands, panel open (1080x768 @2x):  15.44 ms/frame
+6 bands, panel open (1080x768 @2x):  16.50 ms/frame
+23:30  up 1 day, 20:32, 48 users, load averages: 19.16 14.04 11.48

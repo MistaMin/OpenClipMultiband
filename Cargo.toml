@@ -1,0 +1,36 @@
+[package]
+name = "openclipmultiband"
+description = "OpenClip Multiband: 1-to-6-band Linkwitz-Riley multiband clipper (a clipper per band + master clipper) on OpenPluginSDK with GoodLookin DRI"
+version = "1.0.0-beta"
+authors = ["Marcos Quirino Deida"]
+edition = "2021"
+license = "MIT"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "staticlib", "rlib"]
+
+[dependencies]
+olm-api = { path = "crates/api" }
+clip = { path = "crates/clip" }
+# OpenPluginSDK main (c6fa6a0) and GoodLookin DRI main (3fe0426) side by side in
+# ../../Dependencies.
+openplugin = { path = "../../Dependencies/OpenPluginSDK/crates/openplugin" }
+# Text measuring for the kit; the SDK takes the same checkout.
+goodlookindri-shell = { path = "../../Dependencies/GoodLookinDri/shell" }
+
+# The SDK takes GoodLookin DRI from GitHub; use the same checkout as the direct dependency, so
+# both are one crate (pinned in scripts/build.sh).
+[patch."https://github.com/MistaMin/GoodLookinDri"]
+goodlookindri = { path = "../../Dependencies/GoodLookinDri" }
+goodlookindri-shell = { path = "../../Dependencies/GoodLookinDri/shell" }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+x11rb = { version = "0.13", default-features = false }
+
+[workspace]
+members = ["crates/*"]
+
+[profile.release]
+opt-level = 3
+lto = "thin"
