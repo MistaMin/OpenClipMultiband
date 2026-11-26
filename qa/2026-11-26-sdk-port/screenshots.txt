@@ -5,3 +5,10 @@ Screenshots from the new build (SDK 19fac89) against docs/images (1.0.0 Beta), 2
 4band-list-dark: 1080x768 vs 1080x768: pixel-identical
 6band-open-graphite: 1080x768 vs 1080x768: pixel-identical
 3band-light: 1080x768 vs 1080x768: pixel-identical
+Screenshots from the F8 code against docs/images, 2026-11-26
+4band-dark: pixel-identical
+4band-open-dark: pixel-identical
+4band-drawn-dark: pixel-identical
+4band-list-dark: pixel-identical
+6band-open-graphite: pixel-identical
+3band-light: pixel-identical

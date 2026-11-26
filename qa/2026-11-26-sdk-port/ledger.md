@@ -45,17 +45,25 @@ Autogain and Delta: already in the plugin (Auto Gain, Delta; first ledger), not 
 | S20 | OpenMultiband's tests pass and it builds (its SDK jump `c6fa6a0` to `19fac89` also brings ARA, opt-in, and the VST3 reset fix) | Q1 | workspace | none | `cargo test --release --workspace`: 99 passed, 0 failed, no warnings; `scripts/build.sh` exit 0, no notes, all five formats `x86_64 arm64`, macOS 11.0 (logs in the session scratchpad) | verified |
 | S21 | OpenDynamics (branch `feature/auto-loudness-ara`) builds against `19fac89` with the DRI from the SDK's tree | Q1 | `OpenDynamics/Cargo.toml:17-27`, `scripts/build.sh:15-17` and its DRI check, `.github/workflows/*.yml` | none | `cargo tree -i goodlookindri`: one package at the SDK path | verified |
 | S22 | OpenDynamics' tests pass and it builds (its SDK jump `f3f9962` to `19fac89` also brings the VST3 reset fix) | Q1 | workspace | none | `cargo test --release --workspace`: 115 passed, 0 failed, no warnings; `scripts/build.sh` exit 0, no notes, all five formats `x86_64 arm64`, macOS 11.0 (logs in the session scratchpad) | verified |
+| S23 | F8: curve points 1, 3, 5, 7 default to whole percents (13, 38, 63, 88 %) | owner, 2026-11-26 ("whole numbers on F8") | `src/lib.rs:169-173` (`.round()`), test `defaults_resolve` | Curve Point 1 to 16 (waveform box, host list) | `defaults_resolve` checks all 16 defaults are whole; REAPER: the F8 build's AU reports 13/38/63/88 % before a save and after reopening a 1.0.0 Beta project; every render bit-identical to 1.0.0 Beta (the SDK already snapped the values to the 1 % steps when it pushed them) | `cargo-test-f8.log` (112 passed); `crossbuild-F8.txt`; `reaper/F8-AU/params.json` | verified |
+| S24 | OpenClip Multiband signed: VST3, AU, CLAP, LV2 with Developer ID (hardened runtime, timestamp); AAX also PACE-signed with the product's wrap GUID; installed | owner, 2026-11-26 | `scripts/build.sh` with `CODESIGN_IDENTITY`; release skill `sign_aax.sh` | none | `codesign --verify --deep --strict` and the authority of each installed bundle; `wraptool verify`; auval, pluginval (strictness 10), clap-validator on the signed bundles | all five installed bundles valid, authority Developer ID Application, runtime flag, timestamped; AAX PACE-signed ("signed, but not wrapped", as for every AAX); auval on the installed AU, pluginval strictness 10 (VST3, AU) SUCCESS, clap-validator 34 passed, 0 failed (`validators/*-signed.log`); `build-signed.log`, `aax-sign.log`; six screenshots from the F8 code pixel-identical (`screenshots.txt`) | verified |
+| S25 | openplugin-dev's commit tester builds a commit whose SDK sits outside the repository, and its realtime lint leaves test modules out, as its skill says | owner, 2026-11-26 | openplugin-dev `scripts/run_tests.py` (`new_worktree`), `scripts/rt_lint.py` (`test_module_files`), 0.1.1 (`3005e75`) | none | 2 new self-tests (both fail on the old scripts), 15 of 15 pass, CI green; the fixed tester on `46731a9`: lint PASS, `cargo test --release` PASS (clippy still fails: 18 warnings, a project matter, PR-5) | openplugin-dev CI run 45852811777 | verified |
+| S26 | OpenMultiband's port committed and merged | owner, 2026-11-26 ("commit and merge all") | OpenMultiband `09d7618` | none | GitHub Actions run 45852124838: Windows and Linux success, 99 passed each, no DRI checkout; `main` fast-forwarded | | verified |
+| S27 | OpenDynamics' port committed and merged (from its `main`, which already holds the merged Auto Loudness and ARA work) | owner, 2026-11-26 | OpenDynamics `cfb017e` | none | GitHub Actions run 45852140643: Windows and Linux success, 115 passed each, no DRI checkout; `main` fast-forwarded | | verified |
+| S28 | F9 repeated: REAPER suites twice in each format on the signed F8 build, load recorded | owner, 2026-11-26 ("F9: repeat") | none | editor | `reaper_qa.py suite` VST3, CLAP, AU, two rounds | `reaper/f9-repeat/`: VST3, CLAP and AU, two rounds each, every check PASS (deterministic -240 dB, every parameter heard and shown, state), load averages 12 to 26: F9 did not repeat | verified |
 
 ## Findings
 
-- **F8 (exists in 1.0.0 Beta).** The odd curve points default to 12.5, 37.5, 62.5 and 87.5 % while the parameter moves in
-  1 % steps. The AU reports 12.5 % until a session is saved and reopened, then 13 %; with Drawn Curve on, a reopened AU
-  session shifts those points by 0.5 % of the ceiling. VST3 and CLAP reopen as saved. Changing the defaults would change
-  a new instance's drawn curve slightly: the owner's decision.
+- **F8 (exists in 1.0.0 Beta; fixed, S23).** The odd curve points defaulted to 12.5, 37.5, 62.5 and 87.5 % while the
+  parameter moves in 1 % steps, so the AU reported 12.5 % until a session was saved and reopened, then 13 %. The plug-in
+  itself already ran with 13 % (the SDK snaps values to the steps when it pushes them), so the sound never differed. The
+  defaults are now whole percents (owner, 2026-11-26).
 - **F9 (exists in 1.0.0 Beta).** With the Mac heavily loaded by other sessions (load average 17 to 73), CLAP and AU in
   REAPER are sometimes not repeatable: a 40 to 240 ms disturbance in the middle of one render, and in one run silence
   for the rest of the session. The 1.0.0 Beta CLAP does the same; not a reset or activation during a block (diagnostic
-  build), no timing logic while processing. Cause not found: `f9-under-load.txt`.
+  build), no timing logic while processing. Cause not found: `f9-under-load.txt`. Repeated on the signed F8 build
+  (S28): six suites at load averages 12 to 26 all passed; it came back only above that load, or with OpenGrid9
+  suites running alongside.
 
 ## Parameters (host list vs ledger)
 

@@ -167,9 +167,10 @@ static PARAMS: LazyLock<Vec<ParamInfo>> = LazyLock::new(|| {
     ]);
     for k in 1..=CURVE_POINTS {
         // Output at input 2k/16 of the ceiling, in percent of the ceiling. Default: a plain hard
-        // clip, out = min(in, ceiling).
+        // clip, out = min(in, ceiling), in whole percent like every value the 1 % steps can hold
+        // (points 1, 3, 5, 7 sit 0.5 % above the line), so a saved session reopens as it was.
         let at = 2.0 * k as f32 / CURVE_POINTS as f32;
-        params.push(pct(leak(format!("curve{k}")), leak(format!("Curve Point {k}")), 100.0 * at.min(1.0), "Curve"));
+        params.push(pct(leak(format!("curve{k}")), leak(format!("Curve Point {k}")), (100.0 * at.min(1.0)).round(), "Curve"));
     }
     params.extend([
         db("allDrive", "All Bands Drive", 0.0, 24.0, 0.0, 25, "All Bands"),
@@ -1051,6 +1052,10 @@ mod tests {
         assert_eq!(p.param("bandsOpen"), Some(0.0));
         assert_eq!(p.param("curve16"), Some(100.0));
         assert_eq!(p.param("curve4"), Some(50.0));
+        // Every curve point default is on the parameter's 1 % grid (F8: off-grid defaults moved on reopen).
+        let points: Vec<f32> = (1..=CURVE_POINTS).map(|k| p.param(&format!("curve{k}")).unwrap()).collect();
+        assert_eq!(&points[..8], &[13.0, 25.0, 38.0, 50.0, 63.0, 75.0, 88.0, 100.0]);
+        assert!(points.iter().all(|v| v.fract() == 0.0));
         assert!(p.param("outCeiling").is_some_and(|c| (c + 1.0).abs() < 1e-4));
         assert_eq!(p.param("blend"), Some(100.0));
         assert_eq!(p.param("mix"), Some(100.0));

@@ -2,7 +2,7 @@
 """Old build against new build in REAPER, through the plugin-daw-test bridge.
 
   crossbuild.py run <phase> <format>   phase A (1.0.0 Beta installed) or B (port installed); format VST3, CLAP or AU
-  crossbuild.py compare                writes crossbuild.txt from what A and B left
+  crossbuild.py compare [phase]        writes crossbuild.txt from what A and B (or another phase) left
 
 Each run: one REAPER session, the plug-in on a track with the suite's test signal, renders at three settings, the
 "heavy" values saved in a project, then project A-<format>.rpp (saved by phase A) reopened and rendered again.
@@ -66,11 +66,11 @@ def run(phase, fmt):
             pass
 
 
-def compare():
+def compare(new="B"):
     import numpy as np
     lines, ok = [], True
     for fmt in FX:
-        a_dir, b_dir = (os.path.join(HERE, "reaper", "%s-%s" % (p, fmt)) for p in "AB")
+        a_dir, b_dir = (os.path.join(HERE, "reaper", "%s-%s" % (p, fmt)) for p in ("A", new))
         for name in list(SETTINGS) + ["reopened"]:
             fa, fb = os.path.join(a_dir, name + ".wav"), os.path.join(b_dir, name + ".wav")
             _, ca = rq.read_wav(fa)
@@ -99,7 +99,7 @@ def compare():
             (" (differ: %s; 1.0.0 Beta reopens the same: %s)" % (", ".join(diff), "yes" if set(diff) <= set(old_own) else "NO")) if diff else "",
             "every value equal to" if as_old else "DIFFERENT from", "bit-identical to" if same else "DIFFERENT from"))
     lines.append("RESULT: %s" % ("PASS" if ok else "FAIL"))
-    open(os.path.join(HERE, "crossbuild.txt"), "w").write("\n".join(lines) + "\n")
+    open(os.path.join(HERE, "crossbuild.txt" if new == "B" else "crossbuild-%s.txt" % new), "w").write("\n".join(lines) + "\n")
     print("\n".join(lines))
     return ok
 
@@ -108,4 +108,4 @@ if __name__ == "__main__":
     if sys.argv[1] == "run":
         run(sys.argv[2], sys.argv[3])
     else:
-        sys.exit(0 if compare() else 1)
+        sys.exit(0 if compare(*sys.argv[2:]) else 1)

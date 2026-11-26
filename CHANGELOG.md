@@ -4,6 +4,9 @@
 
 - Builds against OpenPluginSDK 19fac89, which carries GoodLookin DRI in its own tree; the separate GoodLookin DRI
   checkout is no longer needed. The DRI code is the same as in 1.0.0 Beta, so sound and editor are unchanged.
+- Curve points 1, 3, 5 and 7 default to whole percents (13, 38, 63, 88 %), on the parameter's 1 % steps. Before, an
+  Audio Unit reported 12.5, 37.5, 62.5 and 87.5 % until a session was saved and reopened. The sound is unchanged:
+  the plug-in already ran with the whole-percent values.
 
 ## 1.0.0 Beta - 2026-11-26
 
