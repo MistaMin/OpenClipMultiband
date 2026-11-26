@@ -205,6 +205,8 @@ static LAYOUTS: &[IoConfig] = &[IoConfig::STEREO];
 
 /// Max latency of a clipper plus the output ceiling (ms), with headroom.
 const MAX_LATENCY_MS: f32 = 10.0;
+/// Reported tail: the worst case (all crossovers at 20 Hz, 48 dB, 6 bands) rings ~490 ms to -90 dBFS.
+const TAIL_MS: f32 = 600.0;
 const FADE_MS: f32 = 10.0;
 /// Fade out and back in around topology switches (Zero Latency, band count, slope).
 const DIP_MS: f32 = 5.0;
@@ -339,8 +341,6 @@ pub struct OpenClipMultiband {
     delta: bool,
     delta_mix: f32,
     delta_step: f32,
-    silent_for: usize,
-    silence_logged: bool,
 }
 
 fn log_line(msg: &str) {
@@ -448,8 +448,6 @@ impl Default for OpenClipMultiband {
             delta: false,
             delta_mix: 0.0,
             delta_step: 1.0,
-            silent_for: 0,
-            silence_logged: false,
         };
         for (i, &v) in values.iter().enumerate() {
             p.set_param_index(i, v);
@@ -496,8 +494,9 @@ impl OpenClipMultiband {
         }
     }
 
+    /// The latency after any pending dip: hosts must hear of a change in the block of the write.
     fn total_latency(&self) -> usize {
-        self.twin.latency() + self.out_clip.latency()
+        self.twin.latency_at(self.zero_want) + self.out_clip.latency_at(self.zero_want)
     }
 
     fn run(&mut self, left: &mut [f32], right: &mut [f32]) {
@@ -676,7 +675,6 @@ impl OpenClipMultiband {
             self.sum[0][i] = g;
         }
         self.shared.peaks(peak_in, peak_out);
-        self.watch_silence(n, peak_in, peak_out);
         self.autogain.feed_out(left, right);
 
         if self.delta_mix != 0.0 || delta_to != 0.0 {
@@ -691,6 +689,12 @@ impl OpenClipMultiband {
         }
         self.autogain.apply(left, right);
         self.shared.set_auto_gain(self.autogain.gain_db());
+        // The f64 crossover and the twin's scaling leave values too small for f32; hosts without FTZ must not get denormals.
+        for v in left.iter_mut().chain(right.iter_mut()) {
+            if v.abs() < 1e-30 {
+                *v = 0.0;
+            }
+        }
     }
 
     /// Folds this block's lane signals into history columns and publishes each full column.
@@ -737,23 +741,6 @@ impl OpenClipMultiband {
         let on = self.values[P_CURVE_ON] >= 0.5;
         for c in self.clippers() {
             c.set_custom(on.then_some(&pts));
-        }
-    }
-
-    fn watch_silence(&mut self, n: usize, peak_in: [f32; 2], peak_out: [f32; 2]) {
-        let all_muted = (0..self.bands_active).all(|b| self.bands[b].mute) && self.blend_target >= 1.0 && self.mix_target >= 1.0;
-        if !all_muted && peak_in[0].max(peak_in[1]) > 1e-4 && peak_out[0].max(peak_out[1]) == 0.0 {
-            self.silent_for += n;
-        } else {
-            self.silent_for = 0;
-        }
-        if self.silent_for > self.sample_rate as usize && !self.silence_logged {
-            self.silence_logged = true;
-            let msg = format!(
-                "silent output with input: bands {} slope {:?} delta {} mix {} dip {} zero {} lat {} in {} out {} ag {} sr {} block {}",
-                self.bands_active, self.slope_active, self.delta, self.delta_mix, self.dip, self.zero, self.total_latency(), self.values[P_INPUT], self.values[P_OUTPUT], self.autogain.gain_db(), self.sample_rate, self.max_block
-            );
-            log_line(&msg);
         }
     }
 }
@@ -957,6 +944,10 @@ impl Plugin for OpenClipMultiband {
 
     fn latency(&self) -> usize {
         self.total_latency()
+    }
+
+    fn tail(&self) -> openplugin::core::Tail {
+        openplugin::core::Tail::Finite((TAIL_MS * 1e-3 * self.sample_rate).ceil() as u32)
     }
 
     fn max_latency(&self) -> Option<usize> {

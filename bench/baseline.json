@@ -1,0 +1,22 @@
+{
+  "plugin": "OpenClip Multiband",
+  "debug_build": false,
+  "iterations": 2000,
+  "cases": [
+    {"sample_rate": 44100, "block": 32, "channels": 2, "layout": "Stereo", "median": 0.025323047, "p99": 0.072811856, "mean": 0.031850925, "min": 0.022967831, "max": 9.815292900},
+    {"sample_rate": 44100, "block": 64, "channels": 2, "layout": "Stereo", "median": 0.025523564, "p99": 0.407436455, "mean": 0.090477385, "min": 0.022480664, "max": 34.937995542},
+    {"sample_rate": 44100, "block": 256, "channels": 2, "layout": "Stereo", "median": 0.025158016, "p99": 0.110106503, "mean": 0.047692143, "min": 0.023212793, "max": 20.392015194},
+    {"sample_rate": 44100, "block": 512, "channels": 2, "layout": "Stereo", "median": 0.025193848, "p99": 0.208348124, "mean": 0.039567890, "min": 0.024031055, "max": 6.018505209},
+    {"sample_rate": 44100, "block": 1024, "channels": 2, "layout": "Stereo", "median": 0.025558103, "p99": 0.451475903, "mean": 0.046890567, "min": 0.024777568, "max": 3.980830729},
+    {"sample_rate": 48000, "block": 32, "channels": 2, "layout": "Stereo", "median": 0.027625500, "p99": 0.387499500, "mean": 0.056147001, "min": 0.024937500, "max": 16.264500000},
+    {"sample_rate": 48000, "block": 64, "channels": 2, "layout": "Stereo", "median": 0.027874500, "p99": 0.148155750, "mean": 0.051293860, "min": 0.024437250, "max": 12.863562000},
+    {"sample_rate": 48000, "block": 256, "channels": 2, "layout": "Stereo", "median": 0.027460875, "p99": 0.028836000, "mean": 0.066394626, "min": 0.025320188, "max": 28.840320188},
+    {"sample_rate": 48000, "block": 512, "channels": 2, "layout": "Stereo", "median": 0.027582094, "p99": 0.744503906, "mean": 0.068379959, "min": 0.025378969, "max": 18.732515625},
+    {"sample_rate": 48000, "block": 1024, "channels": 2, "layout": "Stereo", "median": 0.027748031, "p99": 2.991167953, "mean": 0.107690292, "min": 0.026914078, "max": 15.627240234},
+    {"sample_rate": 96000, "block": 32, "channels": 2, "layout": "Stereo", "median": 0.054876000, "p99": 0.975501000, "mean": 0.455369784, "min": 0.050250000, "max": 237.652500000},
+    {"sample_rate": 96000, "block": 64, "channels": 2, "layout": "Stereo", "median": 0.053437500, "p99": 0.060562500, "mean": 0.055186846, "min": 0.048750000, "max": 0.063687000},
+    {"sample_rate": 96000, "block": 256, "channels": 2, "layout": "Stereo", "median": 0.054906375, "p99": 0.290218875, "mean": 0.103965282, "min": 0.050437500, "max": 25.636859250},
+    {"sample_rate": 96000, "block": 512, "channels": 2, "layout": "Stereo", "median": 0.055742250, "p99": 1.208171813, "mean": 0.113024153, "min": 0.052906313, "max": 16.832625000},
+    {"sample_rate": 96000, "block": 1024, "channels": 2, "layout": "Stereo", "median": 0.056179687, "p99": 1.528222688, "mean": 0.108681299, "min": 0.053101594, "max": 7.401812531}
+  ]
+}

@@ -7,6 +7,11 @@
 - Curve points 1, 3, 5 and 7 default to whole percents (13, 38, 63, 88 %), on the parameter's 1 % steps. Before, an
   Audio Unit reported 12.5, 37.5, 62.5 and 87.5 % until a session was saved and reopened. The sound is unchanged:
   the plug-in already ran with the whole-percent values.
+- The latency reported to the host changes in the same block as the Anti-Alias, Oversampling or Zero Latency
+  change that causes it (the audio still switches after its 5 ms fade), so hosts realign at once.
+- The plug-in reports a 600 ms tail, the longest ring-down of its crossovers (all at 20 Hz, 48 dB, 6 bands).
+- No file is written from the audio thread any more (a diagnostic for silent output is removed), and output samples
+  smaller than 1e-30 are set to zero, so hosts that do not flush denormals never receive one.
 
 ## 1.0.0 Beta - 2026-11-26
 

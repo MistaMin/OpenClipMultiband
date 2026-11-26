@@ -130,6 +130,8 @@ pub struct Clipper {
     lat: Vec<usize>,
     pads: Vec<[Delay; 2]>,
     max_lat: usize,
+    /// Section latency for every (aa, os) quality, measured in `prepare`.
+    lat_at: [[usize; OS_LABELS.len()]; AA_LABELS.len()],
     fallback: usize,
     zero: bool,
     algo: usize,
@@ -170,6 +172,7 @@ impl Clipper {
             lat: vec![0; n],
             pads: (0..n).map(|_| Default::default()).collect(),
             max_lat: 0,
+            lat_at: Default::default(),
             fallback: list.iter().position(|e| e.0 == ZERO_FALLBACK).unwrap_or(0),
             zero: false,
             algo: 0,
@@ -229,6 +232,12 @@ impl Clipper {
         self.applied = q;
         self.active = self.wanted();
         self.prev = None;
+    }
+
+    /// The latency once a pending quality or Zero Latency change is applied; `latency` is the one in force.
+    pub fn latency_at(&self, zero: bool) -> usize {
+        let (aa, os) = self.quality;
+        if zero { 0 } else { self.lat_at.get(aa).and_then(|r| r.get(os)).copied().unwrap_or(self.max_lat) }
     }
 
     fn wanted(&self) -> usize {
@@ -301,6 +310,14 @@ impl Module for Clipper {
         self.dip_step = 1.0 / (DIP_MS * 1e-3 * sample_rate).max(1.0);
         self.smooth = 1.0 - (-1.0 / (SMOOTH_MS * 1e-3 * sample_rate)).exp();
         self.chunk_smooth = 1.0 - (-(CHUNK as f32) / (SMOOTH_MS * 1e-3 * sample_rate)).exp();
+        for (aa, row) in self.lat_at.iter_mut().enumerate() {
+            for (os, l) in row.iter_mut().enumerate() {
+                *l = self.engines.iter_mut().map(|e| {
+                    e.set_quality(aa, os);
+                    e.latency()
+                }).max().unwrap_or(0).min(MAX_PAD);
+            }
+        }
         self.apply_quality();
         self.dip = 1.0;
         self.drive = self.drive_target;
