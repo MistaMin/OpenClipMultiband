@@ -9,7 +9,9 @@ const RAIL_SHAPE: f32 = 0.65;
 #[cfg(test)]
 const RAIL_CHARACTER: f32 = 0.6;
 
-pub const ENGINES: &[(&str, fn() -> Box<dyn ClipEngine>)] = &[("Ferro", ferro), ("Rail", rail)];
+type Factory = fn() -> Box<dyn ClipEngine>;
+
+pub const ENGINES: &[(&str, Factory)] = &[("Ferro", ferro), ("Rail", rail)];
 
 fn flush(value: f32) -> f32 {
     if value.abs() < 1e-25 {
@@ -506,7 +508,7 @@ mod tests {
                 let mut right = vec![0.0; 64];
                 for i in 0..64 {
                     let t = (block * 64 + i) as f32;
-                    left[i] = if (t as usize / 9) % 2 == 0 { 8.0 } else { -8.0 };
+                    left[i] = if (t as usize / 9).is_multiple_of(2) { 8.0 } else { -8.0 };
                     right[i] = -left[i];
                 }
                 engine.process(&mut left, &mut right);

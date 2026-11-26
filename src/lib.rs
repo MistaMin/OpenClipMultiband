@@ -1374,7 +1374,7 @@ mod tests {
             while at < n {
                 if resend_at == Some(k) {
                     for (i, info) in INFO.params.iter().enumerate() {
-                        let norm = info.to_normalized(p.values[i]) as f32;
+                        let norm = info.to_normalized(p.values[i]);
                         p.set_param_index(i, info.from_normalized(norm));
                     }
                 }

@@ -322,8 +322,8 @@ impl Crossover {
         let mut sorted = [0.0f32; MAX_SPLITS];
         sorted[..n].copy_from_slice(&self.raw_freqs[..n]);
         sorted[..n].sort_by(|a, b| a.total_cmp(b));
-        for k in 0..n {
-            self.g_target[k] = freq_to_g(sorted[k], self.sr);
+        for (g, &f) in self.g_target.iter_mut().zip(&sorted[..n]) {
+            *g = freq_to_g(f, self.sr);
         }
     }
 
@@ -365,8 +365,8 @@ impl Crossover {
                     let (lo, hi) = ch.splits[k].run(rem, slope, g);
                     bands[k] = lo;
                     // Phase-align all previously peeled lower bands with split `k`.
-                    for b in 0..k {
-                        bands[b] = ch.ap[b][k].run(bands[b], slope, g);
+                    for (b, v) in bands[..k].iter_mut().enumerate() {
+                        *v = ch.ap[b][k].run(*v, slope, g);
                     }
                     rem = hi;
                 }

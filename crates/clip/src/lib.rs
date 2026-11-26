@@ -22,6 +22,7 @@ use olm_api::{Kind, Meters, Module, ParamDesc};
 pub use clip_api::shaper::{Drawn, Pt, AA_LABELS, CURVE_POINTS as DRAWN_POINTS, OS_LABELS};
 
 pub type Factory = fn() -> Box<dyn ClipEngine>;
+pub type ShaperFactory = fn() -> Box<dyn Shaper>;
 
 fn eng<S: Shaper + Default + 'static>() -> Box<dyn ClipEngine> {
     Box::new(Shaped::new(S::default()))
@@ -32,7 +33,7 @@ fn shp<S: Shaper + Default + 'static>() -> Box<dyn Shaper> {
 }
 
 /// Every algorithm as a bare curve and stages (the editor draws these), in host choice order.
-pub const ALGOS: &[(&str, fn() -> Box<dyn Shaper>)] = &[
+pub const ALGOS: &[(&str, ShaperFactory)] = &[
     ("Honey", shp::<ExpKnee>),
     ("Flint", shp::<Hard>),
     ("Ghost", shp::<SmoothClip>),

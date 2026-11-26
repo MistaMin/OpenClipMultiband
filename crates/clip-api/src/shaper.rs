@@ -608,9 +608,10 @@ impl<S: Shaper> ClipEngine for Shaped<S> {
                 std::mem::swap(&mut a, &mut b);
                 len *= 2;
             }
-            for j in 0..len {
-                let y = self.frame([a[0][j] as f64, a[1][j] as f64]);
-                (a[0][j], a[1][j]) = (y[0] as f32, y[1] as f32);
+            let [l, r] = &mut a;
+            for (x0, x1) in l[..len].iter_mut().zip(&mut r[..len]) {
+                let y = self.frame([*x0 as f64, *x1 as f64]);
+                (*x0, *x1) = (y[0] as f32, y[1] as f32);
             }
             for s in (0..st).rev() {
                 len /= 2;
@@ -669,8 +670,8 @@ mod tests {
 
     #[test]
     fn every_quality_passes_the_contract_and_reports_its_true_delay() {
-        for aa in 0..3 {
-            for os in 0..OS_LABELS.len() {
+        for (aa, aa_name) in AA_LABELS.iter().enumerate() {
+            for (os, os_name) in OS_LABELS.iter().enumerate() {
                 let make = move || -> Box<dyn ClipEngine> {
                     let mut e = make();
                     e.set_quality(aa, os);
@@ -686,8 +687,8 @@ mod tests {
                 // (the adaptive method's half-sample all-pass peaks one sample later at 1x).
                 let peak = impulse_peak(e.as_mut());
                 let slack = usize::from(aa == 1 && os == 0);
-                assert!(peak >= lat && peak <= lat + slack, "{} {}: latency {lat}, impulse peak {peak}", AA_LABELS[aa], OS_LABELS[os]);
-                assert!(lat <= 64, "{} {}: latency {lat}", AA_LABELS[aa], OS_LABELS[os]);
+                assert!(peak >= lat && peak <= lat + slack, "{aa_name} {os_name}: latency {lat}, impulse peak {peak}");
+                assert!(lat <= 64, "{aa_name} {os_name}: latency {lat}");
             }
         }
     }

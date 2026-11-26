@@ -278,8 +278,8 @@ pub mod bench {
                 assert_eq!(lat, e.latency(), "{}: latency changed", e.name());
                 // Huge, tiny and zero input stay finite; silence returns to silence.
                 let mut wild: Vec<f32> = noise(4_000, 1e4, 5);
-                wild.extend(std::iter::repeat(1e-38).take(2_000));
-                wild.extend(std::iter::repeat(0.0).take(fs as usize / 2));
+                wild.extend(std::iter::repeat_n(1e-38, 2_000));
+                wild.extend(std::iter::repeat_n(0.0, fs as usize / 2));
                 let y = run(e.as_mut(), &wild, &[BLOCK]);
                 assert!(y.iter().all(|v| v.is_finite()), "{}: non-finite on extreme input", e.name());
                 let tail = y[y.len() - 256..].iter().fold(0.0f32, |m, v| m.max(v.abs()));

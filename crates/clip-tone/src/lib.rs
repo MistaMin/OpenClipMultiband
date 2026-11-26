@@ -13,7 +13,9 @@
 
 use clip_api::ClipEngine;
 
-pub const ENGINES: &[(&str, fn() -> Box<dyn ClipEngine>)] = &[
+type Factory = fn() -> Box<dyn ClipEngine>;
+
+pub const ENGINES: &[(&str, Factory)] = &[
     ("Smooth Clip", || Box::new(SmoothClip::new())),
     ("Tone Clip", || Box::new(ToneClip::new())),
 ];
