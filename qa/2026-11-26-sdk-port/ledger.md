@@ -1,6 +1,6 @@
 # Scope ledger: port OpenClip Multiband to the new OpenPluginSDK
 
-Project: OpenClip Multiband   Branch / commit: `main` at `8b27625` (tag `v1.0.0-beta`)   Started: 2026-11-26   Agent: Claude Code (Opus 5.5)
+Project: OpenClip Multiband   Branch / commit: from `main` at `8b27625` (tag `v1.0.0-beta`); port `9b7de27` on `sdk-dri-in-tree`, merged into `main`   Started: 2026-11-26   Agent: Claude Code (Opus 5.5)
 
 Sources of scope:
 - Request (2026-11-26): "port to new openpluginsdk".
@@ -26,7 +26,7 @@ Autogain and Delta: already in the plugin (Auto Gain, Delta; first ledger), not 
 | S1 | Builds against OpenPluginSDK `main` `19fac89` | request | `scripts/build.sh:8` (`SDK_REV`), `.github/workflows/build.yml:13` (`OPENPLUGIN_SDK_REF`), `Cargo.toml:16-19` (comments) | none: build wiring | `build-check.txt` (no notes; SDK at `19fac89`), `build.log` | verified |
 | S2 | GoodLookin DRI comes from the SDK's tree: one copy of each DRI crate, none from the sibling folder | SDK `docs/PUBLISHING.md` | `Cargo.toml:20` (`goodlookindri-shell` path to `OpenPluginSDK/crates/goodlookindri/shell`), `Cargo.toml:22-26` (`[patch]` removed), `Cargo.lock` | none | `cargo tree -i goodlookindri` and `-i goodlookindri-shell`: one package each, at the SDK path; no "patch was not used" warning | `build-check.txt`: one `goodlookindri` and one `goodlookindri-shell`, both under `OpenPluginSDK/crates/goodlookindri`; no package from the sibling folder; `Cargo.lock` unchanged | verified |
 | S3 | The build script no longer looks for the sibling DRI | S2 | `scripts/build.sh:9-10,28-29` (`DRI`, `DRI_REV` and their check) | none | `grep` empty; `build.log` exit 0 | verified |
-| S4 | Windows and Linux builds without the GoodLookinDri checkout | S2 | `.github/workflows/build.yml:14` (`GOODLOOKINDRI_REF`), `:34-38` and `:91-95` (the checkouts), the comment at `:25` | none | a `workflow_dispatch` run on the side copy: both jobs green, 112 tests each, installer and archive made | | todo |
+| S4 | Windows and Linux builds without the GoodLookinDri checkout | S2 | `.github/workflows/build.yml:14` (`GOODLOOKINDRI_REF`), `:34-38` and `:91-95` (the checkouts), the comment at `:25` | none | GitHub Actions run 45848878649 on `9b7de27`: Windows x64 and Linux x86_64 success, 112 passed each, SDK ref `19fac89`, no DRI checkout; artifacts `windows-x64` (2.3 MB), `linux-x86_64` (4.1 MB) | verified |
 | S5 | The DRI code is the one 1.0.0 Beta shipped | SDK diff | none | none | tree of `19fac89:crates/goodlookindri` against `3fe0426^{tree}` | `sdk-diff.txt`: both `aa38ec9` (2026-11-26) | verified |
 | S6 | No other SDK change reaches the plugin | SDK diff | none | none | `git diff 53e198c 19fac89` outside `crates/goodlookindri`: CI, `Cargo.lock` (2 source lines), `Cargo.toml` (path entries), `docs/PUBLISHING.md` only | `sdk-diff.txt` (2026-11-26) | verified |
 | S7 | Unit and project tests pass | profile | workspace | none | `cargo-test.log`: 112 passed, 0 failed, no warnings | verified |
@@ -40,11 +40,11 @@ Autogain and Delta: already in the plugin (Auto Gain, Delta; first ledger), not 
 | S15 | OpenGrid9 suites pass | profile | none | none (headless) | `og9/*/report.md`: VST3 and AU all PASS; LV2 loads, finite, not silent, state PASS, repeat renders differ in the first 28 ms only (F5, as in the release) | verified |
 | S16 | The documents say where the DRI comes from | S2 | `README.md:83-85` (Build from source), `CHANGELOG.md` (Unreleased), `THIRD_PARTY_LICENSES.md:11` | none | README build section and CHANGELOG Unreleased line; THIRD_PARTY_LICENSES line still true (same MIT code, now from the SDK tree) | verified |
 | S17 | The profile, the wiki page and memory carry the new pin | profile | `plugin-qa/projects/openclipmultiband.md:4`, wiki `pages/openclipmultiband.md`, memory | none | profile line 4 and OpenGrid9 note, wiki Stack row and `environment.md`, memory; wiki check: no new failures | verified |
-| S18 | Commit as `MistaMin` on a side copy, no AI attribution lines, no third-party brand names; merged into `main` after S4 | conventions; Q3 | git | none | `git log -1 --format='%an <%ae>%n%b'`; brand-name grep of the diff; `main` on GitHub at the tested commit | | todo |
+| S18 | Commit as `MistaMin` on a side copy, no AI attribution lines, no third-party brand names; merged into `main` after S4 | conventions; Q3 | git | none | `9b7de27` by `MistaMin <80925498+MistaMin@users.noreply.github.com>`, no attribution lines; brand names only where the release ledger already has them (host names in QA reports); merged into `main` by fast-forward, with this ledger update on top | verified |
 | S19 | OpenMultiband builds against `19fac89` with the DRI from the SDK's tree | Q1 | `OpenMultiband/Cargo.toml:18-28`, `scripts/build.sh:8-10` and its DRI check, `.github/workflows/build.yml:13-14,34-38,91-95` | none | `cargo tree -i goodlookindri`: one package at the SDK path | verified |
-| S20 | OpenMultiband's tests pass and it builds (its SDK jump `c6fa6a0` to `19fac89` also brings ARA, opt-in, and the VST3 reset fix) | Q1 | workspace | none | `cargo test --release --workspace`; `scripts/build.sh` | | todo |
+| S20 | OpenMultiband's tests pass and it builds (its SDK jump `c6fa6a0` to `19fac89` also brings ARA, opt-in, and the VST3 reset fix) | Q1 | workspace | none | `cargo test --release --workspace`: 99 passed, 0 failed, no warnings; `scripts/build.sh` exit 0, no notes, all five formats `x86_64 arm64`, macOS 11.0 (logs in the session scratchpad) | verified |
 | S21 | OpenDynamics (branch `feature/auto-loudness-ara`) builds against `19fac89` with the DRI from the SDK's tree | Q1 | `OpenDynamics/Cargo.toml:17-27`, `scripts/build.sh:15-17` and its DRI check, `.github/workflows/*.yml` | none | `cargo tree -i goodlookindri`: one package at the SDK path | verified |
-| S22 | OpenDynamics' tests pass and it builds (its SDK jump `f3f9962` to `19fac89` also brings the VST3 reset fix) | Q1 | workspace | none | `cargo test --release --workspace`; `scripts/build.sh` | | todo |
+| S22 | OpenDynamics' tests pass and it builds (its SDK jump `f3f9962` to `19fac89` also brings the VST3 reset fix) | Q1 | workspace | none | `cargo test --release --workspace`: 115 passed, 0 failed, no warnings; `scripts/build.sh` exit 0, no notes, all five formats `x86_64 arm64`, macOS 11.0 (logs in the session scratchpad) | verified |
 
 ## Findings
 
