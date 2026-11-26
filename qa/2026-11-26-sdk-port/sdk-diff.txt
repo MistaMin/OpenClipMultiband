@@ -1,0 +1,11 @@
+OpenPluginSDK 53e198c -> 19fac89 (origin/main, 2026-11-26)
+
+Changes outside crates/goodlookindri:
+ .github/workflows/ci.yml | 145 ++++-------------------------------------------
+ Cargo.lock               |   2 -
+ Cargo.toml               |   7 ++-
+ docs/PUBLISHING.md       |  13 +++--
+ 4 files changed, 25 insertions(+), 142 deletions(-)
+
+In-tree DRI tree:      aa38ec901f49f03120b8a36f229f002e2428bf13
+GoodLookinDri 3fe0426: aa38ec901f49f03120b8a36f229f002e2428bf13

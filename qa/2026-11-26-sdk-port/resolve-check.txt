@@ -1,0 +1,10 @@
+Dependency check in a scratch copy, 2026-11-26 (no shared folder changed)
+Layout: OpenPluginSDK 19fac89 (git archive) at Dependencies/OpenPluginSDK, the sibling GoodLookinDri folder beside it.
+
+OpenClip Multiband with goodlookindri-shell taken from OpenPluginSDK/crates/goodlookindri/shell and the [patch] section removed:
+  cargo tree -i goodlookindri        one package, OpenPluginSDK/crates/goodlookindri
+  cargo tree -i goodlookindri-shell  one package, OpenPluginSDK/crates/goodlookindri/shell
+
+OpenMultiband and OpenDynamics, unchanged, against the same SDK:
+  error: package collision in the lockfile: packages goodlookindri v0.2.1 (Dependencies/GoodLookinDri)
+  and goodlookindri v0.2.1 (Dependencies/OpenPluginSDK/crates/goodlookindri) are different

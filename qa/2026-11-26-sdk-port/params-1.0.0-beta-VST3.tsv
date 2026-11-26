@@ -1,0 +1,85 @@
+index	ident	name	default
+0	0:0	Input Gain	0.5
+1	1:1	Output Gain	0.5
+2	2:2	Zero Latency	0
+3	3:3	Auto Gain	0
+4	4:4	Delta	0
+5	5:5	Bands	0.6000000238
+6	6:6	Crossover Slope	0.5
+7	7:7	Crossover 1	0.259383738
+8	8:8	Crossover 2	0.5246770978
+9	9:9	Crossover 3	0.7253637314
+10	10:10	Crossover 4	0.8673533201
+11	11:11	Crossover 5	0.9483659863
+12	12:12	Algorithm	0
+13	13:13	Shape	0.8000000119
+14	14:14	Character	0
+15	15:15	Single/Multi Blend	1
+16	16:16	Dry/Wet Mix	1
+17	17:17	Single Drive	0
+18	18:18	Single Ceiling	1
+19	19:19	Output Ceiling On	1
+20	20:20	Output Ceiling	0.9583333135
+21	21:21	Anti-Alias	0
+22	22:22	Oversampling	0
+23	23:23	Bands Open	0
+24	24:24	Drawn Curve	0
+25	25:25	Curve Point 1	0.1299999952
+26	26:26	Curve Point 2	0.25
+27	27:27	Curve Point 3	0.3799999952
+28	28:28	Curve Point 4	0.5
+29	29:29	Curve Point 5	0.6299999952
+30	30:30	Curve Point 6	0.75
+31	31:31	Curve Point 7	0.8799999952
+32	32:32	Curve Point 8	1
+33	33:33	Curve Point 9	1
+34	34:34	Curve Point 10	1
+35	35:35	Curve Point 11	1
+36	36:36	Curve Point 12	1
+37	37:37	Curve Point 13	1
+38	38:38	Curve Point 14	1
+39	39:39	Curve Point 15	1
+40	40:40	Curve Point 16	1
+41	41:41	All Bands Drive	0
+42	42:42	All Bands Ceiling	1
+43	43:43	All Bands Gain	0.5
+44	44:44	Band 1 Drive	0.5
+45	45:45	Band 1 Ceiling	0.5
+46	46:46	Band 1 Gain	0.5
+47	47:47	Band 1 Solo	0
+48	48:48	Band 1 Mute	0
+49	49:49	Band 1 Bypass	0
+50	50:50	Band 2 Drive	0.5
+51	51:51	Band 2 Ceiling	0.5
+52	52:52	Band 2 Gain	0.5
+53	53:53	Band 2 Solo	0
+54	54:54	Band 2 Mute	0
+55	55:55	Band 2 Bypass	0
+56	56:56	Band 3 Drive	0.5
+57	57:57	Band 3 Ceiling	0.5
+58	58:58	Band 3 Gain	0.5
+59	59:59	Band 3 Solo	0
+60	60:60	Band 3 Mute	0
+61	61:61	Band 3 Bypass	0
+62	62:62	Band 4 Drive	0.5
+63	63:63	Band 4 Ceiling	0.5
+64	64:64	Band 4 Gain	0.5
+65	65:65	Band 4 Solo	0
+66	66:66	Band 4 Mute	0
+67	67:67	Band 4 Bypass	0
+68	68:68	Band 5 Drive	0.5
+69	69:69	Band 5 Ceiling	0.5
+70	70:70	Band 5 Gain	0.5
+71	71:71	Band 5 Solo	0
+72	72:72	Band 5 Mute	0
+73	73:73	Band 5 Bypass	0
+74	74:74	Band 6 Drive	0.5
+75	75:75	Band 6 Ceiling	0.5
+76	76:76	Band 6 Gain	0.5
+77	77:77	Band 6 Solo	0
+78	78:78	Band 6 Mute	0
+79	79:79	Band 6 Bypass	0
+80	80:1113149523	Bypass	0
+81	81:bypass	Bypass	0
+82	82:wet	Wet	1
+83	83:delta	Delta	0

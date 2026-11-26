@@ -1,0 +1,892 @@
+{
+ "fx": "CLAP: OpenClip Multiband",
+ "checks": [
+  {
+   "check": "loads",
+   "status": "PASS",
+   "detail": "CLAP: OpenClip Multiband (OpenGrid), 83 parameters"
+  },
+  {
+   "check": "finite output",
+   "status": "PASS",
+   "detail": "peak -4.1 dBFS"
+  },
+  {
+   "check": "not silent",
+   "status": "PASS",
+   "detail": "rms -14.9 dBFS"
+  },
+  {
+   "check": "deterministic render",
+   "status": "FAIL",
+   "detail": "repeat differs by -4.8 dB"
+  },
+  {
+   "check": "editor opens",
+   "status": "PASS",
+   "detail": "1080x821, 38.8% animates by itself"
+  },
+  {
+   "check": "every parameter changes the sound",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "every parameter is shown in the GUI",
+   "status": "FAIL",
+   "detail": "Input Gain, Output Gain, Zero Latency, Auto Gain, Delta, Bands, Crossover Slope, Crossover 1, Crossover 2, Crossover 3, Crossover 4, Crossover 5, Algorithm, Shape, Character, Single/Multi Blend, Dry/Wet Mix, Single Drive, Single Ceiling, Output Ceiling On, Output Ceiling, Anti-Alias, Oversampling, Bands Open, Drawn Curve, Curve Point 1, Curve Point 2, Curve Point 3, Curve Point 4, Curve Point 5, Curve Point 6, Curve Point 7, Curve Point 8, Curve Point 9, Curve Point 10, Curve Point 11, Curve Point 12, Curve Point 13, Curve Point 14, Curve Point 15, Curve Point 16, All Bands Drive, All Bands Ceiling, All Bands Gain, Band 1 Drive, Band 1 Ceiling, Band 1 Gain, Band 1 Solo, Band 1 Mute, Band 1 Bypass, Band 2 Drive, Band 2 Ceiling, Band 2 Gain, Band 2 Solo, Band 2 Mute, Band 2 Bypass, Band 3 Drive, Band 3 Ceiling, Band 3 Gain, Band 3 Solo, Band 3 Mute, Band 3 Bypass, Band 4 Drive, Band 4 Ceiling, Band 4 Gain, Band 4 Solo, Band 4 Mute, Band 4 Bypass, Band 5 Drive, Band 5 Ceiling, Band 5 Gain, Band 5 Solo, Band 5 Mute, Band 5 Bypass, Band 6 Drive, Band 6 Ceiling, Band 6 Gain, Band 6 Solo, Band 6 Mute, Band 6 Bypass, Bypass, Wet, Delta"
+  },
+  {
+   "check": "state survives save and reopen",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "editor reopens",
+   "status": "PASS",
+   "detail": "5 close/open cycles"
+  }
+ ],
+ "params": [
+  {
+   "index": 0,
+   "name": "Input Gain",
+   "ident": "0:0",
+   "default": 0.5,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 1,
+   "name": "Output Gain",
+   "ident": "1:1",
+   "default": 0.5,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 2,
+   "name": "Zero Latency",
+   "ident": "2:2",
+   "default": 0,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 3,
+   "name": "Auto Gain",
+   "ident": "3:3",
+   "default": 0,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 4,
+   "name": "Delta",
+   "ident": "4:4",
+   "default": 0,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 5,
+   "name": "Bands",
+   "ident": "5:5",
+   "default": 0.6,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 6,
+   "name": "Crossover Slope",
+   "ident": "6:6",
+   "default": 0.5,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 7,
+   "name": "Crossover 1",
+   "ident": "7:7",
+   "default": 0.005005005005,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 8,
+   "name": "Crossover 2",
+   "ident": "8:8",
+   "default": 0.03653653654,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 9,
+   "name": "Crossover 3",
+   "ident": "9:9",
+   "default": 0.1491491491,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 10,
+   "name": "Crossover 4",
+   "ident": "10:10",
+   "default": 0.3993993994,
+   "context": "Bands=0.8",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 11,
+   "name": "Crossover 5",
+   "ident": "11:11",
+   "default": 0.6996996997,
+   "context": "Bands=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 12,
+   "name": "Algorithm",
+   "ident": "12:12",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 13,
+   "name": "Shape",
+   "ident": "13:13",
+   "default": 0.8,
+   "context": "All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 14,
+   "name": "Character",
+   "ident": "14:14",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 15,
+   "name": "Single/Multi Blend",
+   "ident": "15:15",
+   "default": 1,
+   "context": "All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 16,
+   "name": "Dry/Wet Mix",
+   "ident": "16:16",
+   "default": 1,
+   "context": "All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 17,
+   "name": "Single Drive",
+   "ident": "17:17",
+   "default": 0,
+   "context": "Single/Multi Blend=0",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 18,
+   "name": "Single Ceiling",
+   "ident": "18:18",
+   "default": 1,
+   "context": "Single/Multi Blend=0",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 19,
+   "name": "Output Ceiling On",
+   "ident": "19:19",
+   "default": 1,
+   "context": "Input Gain=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 20,
+   "name": "Output Ceiling",
+   "ident": "20:20",
+   "default": 0.9583333333,
+   "context": "Input Gain=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 21,
+   "name": "Anti-Alias",
+   "ident": "21:21",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 22,
+   "name": "Oversampling",
+   "ident": "22:22",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 23,
+   "name": "Bands Open",
+   "ident": "23:23",
+   "default": 0,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 24,
+   "name": "Drawn Curve",
+   "ident": "24:24",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 25,
+   "name": "Curve Point 1",
+   "ident": "25:25",
+   "default": 0.13,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 26,
+   "name": "Curve Point 2",
+   "ident": "26:26",
+   "default": 0.25,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 27,
+   "name": "Curve Point 3",
+   "ident": "27:27",
+   "default": 0.38,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 28,
+   "name": "Curve Point 4",
+   "ident": "28:28",
+   "default": 0.5,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 29,
+   "name": "Curve Point 5",
+   "ident": "29:29",
+   "default": 0.63,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 30,
+   "name": "Curve Point 6",
+   "ident": "30:30",
+   "default": 0.75,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 31,
+   "name": "Curve Point 7",
+   "ident": "31:31",
+   "default": 0.88,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 32,
+   "name": "Curve Point 8",
+   "ident": "32:32",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 33,
+   "name": "Curve Point 9",
+   "ident": "33:33",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 34,
+   "name": "Curve Point 10",
+   "ident": "34:34",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 35,
+   "name": "Curve Point 11",
+   "ident": "35:35",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 36,
+   "name": "Curve Point 12",
+   "ident": "36:36",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 37,
+   "name": "Curve Point 13",
+   "ident": "37:37",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 38,
+   "name": "Curve Point 14",
+   "ident": "38:38",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 39,
+   "name": "Curve Point 15",
+   "ident": "39:39",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 40,
+   "name": "Curve Point 16",
+   "ident": "40:40",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 41,
+   "name": "All Bands Drive",
+   "ident": "41:41",
+   "default": 0,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 42,
+   "name": "All Bands Ceiling",
+   "ident": "42:42",
+   "default": 1,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 43,
+   "name": "All Bands Gain",
+   "ident": "43:43",
+   "default": 0.5,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 44,
+   "name": "Band 1 Drive",
+   "ident": "44:44",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 45,
+   "name": "Band 1 Ceiling",
+   "ident": "45:45",
+   "default": 0.5,
+   "context": "Bands Open=1, All Bands Ceiling=0.5",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 46,
+   "name": "Band 1 Gain",
+   "ident": "46:46",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 47,
+   "name": "Band 1 Solo",
+   "ident": "47:47",
+   "default": 0,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 48,
+   "name": "Band 1 Mute",
+   "ident": "48:48",
+   "default": 0,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 49,
+   "name": "Band 1 Bypass",
+   "ident": "49:49",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 50,
+   "name": "Band 2 Drive",
+   "ident": "50:50",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 51,
+   "name": "Band 2 Ceiling",
+   "ident": "51:51",
+   "default": 0.5,
+   "context": "Bands Open=1, All Bands Ceiling=0.5",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 52,
+   "name": "Band 2 Gain",
+   "ident": "52:52",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 53,
+   "name": "Band 2 Solo",
+   "ident": "53:53",
+   "default": 0,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 54,
+   "name": "Band 2 Mute",
+   "ident": "54:54",
+   "default": 0,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 55,
+   "name": "Band 2 Bypass",
+   "ident": "55:55",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 56,
+   "name": "Band 3 Drive",
+   "ident": "56:56",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 57,
+   "name": "Band 3 Ceiling",
+   "ident": "57:57",
+   "default": 0.5,
+   "context": "Bands Open=1, All Bands Ceiling=0.5",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 58,
+   "name": "Band 3 Gain",
+   "ident": "58:58",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 59,
+   "name": "Band 3 Solo",
+   "ident": "59:59",
+   "default": 0,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 60,
+   "name": "Band 3 Mute",
+   "ident": "60:60",
+   "default": 0,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 61,
+   "name": "Band 3 Bypass",
+   "ident": "61:61",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 62,
+   "name": "Band 4 Drive",
+   "ident": "62:62",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 63,
+   "name": "Band 4 Ceiling",
+   "ident": "63:63",
+   "default": 0.5,
+   "context": "Bands Open=1, All Bands Ceiling=0.5",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 64,
+   "name": "Band 4 Gain",
+   "ident": "64:64",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 65,
+   "name": "Band 4 Solo",
+   "ident": "65:65",
+   "default": 0,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 66,
+   "name": "Band 4 Mute",
+   "ident": "66:66",
+   "default": 0,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 67,
+   "name": "Band 4 Bypass",
+   "ident": "67:67",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 68,
+   "name": "Band 5 Drive",
+   "ident": "68:68",
+   "default": 0.5,
+   "context": "Bands=0.8, Bands Open=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 69,
+   "name": "Band 5 Ceiling",
+   "ident": "69:69",
+   "default": 0.5,
+   "context": "Bands=0.8, Bands Open=1, All Bands Ceiling=0.5",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 70,
+   "name": "Band 5 Gain",
+   "ident": "70:70",
+   "default": 0.5,
+   "context": "Bands=0.8, Bands Open=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 71,
+   "name": "Band 5 Solo",
+   "ident": "71:71",
+   "default": 0,
+   "context": "Bands=0.8, Bands Open=0",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 72,
+   "name": "Band 5 Mute",
+   "ident": "72:72",
+   "default": 0,
+   "context": "Bands=0.8, Bands Open=0",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 73,
+   "name": "Band 5 Bypass",
+   "ident": "73:73",
+   "default": 0,
+   "context": "Bands=0.8, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 74,
+   "name": "Band 6 Drive",
+   "ident": "74:74",
+   "default": 0.5,
+   "context": "Bands=1, Bands Open=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 75,
+   "name": "Band 6 Ceiling",
+   "ident": "75:75",
+   "default": 0.5,
+   "context": "Bands=1, Bands Open=1, All Bands Ceiling=0.5",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 76,
+   "name": "Band 6 Gain",
+   "ident": "76:76",
+   "default": 0.5,
+   "context": "Bands=1, Bands Open=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 77,
+   "name": "Band 6 Solo",
+   "ident": "77:77",
+   "default": 0,
+   "context": "Bands=1, Bands Open=0",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 78,
+   "name": "Band 6 Mute",
+   "ident": "78:78",
+   "default": 0,
+   "context": "Bands=1, Bands Open=0",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 79,
+   "name": "Band 6 Bypass",
+   "ident": "79:79",
+   "default": 0,
+   "context": "Bands=1, All Bands Drive=1",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 80,
+   "name": "Bypass",
+   "ident": "80:bypass",
+   "default": 0,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.004,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 81,
+   "name": "Wet",
+   "ident": "81:wet",
+   "default": 1,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  },
+  {
+   "index": 82,
+   "name": "Delta",
+   "ident": "82:delta",
+   "default": 0,
+   "context": "",
+   "audio": "skipped (render not deterministic)",
+   "visualChange": 0.0,
+   "visual": "NOT SHOWN"
+  }
+ ],
+ "info": {
+  "fx": 0,
+  "numParams": 83,
+  "name": "CLAP: OpenClip Multiband (OpenGrid)",
+  "latency": "126"
+ },
+ "failed": [
+  "deterministic render",
+  "every parameter is shown in the GUI"
+ ]
+}

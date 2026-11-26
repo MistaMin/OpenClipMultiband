@@ -1,0 +1,5 @@
+Host parameter lists of the port build (REAPER 7.80) against 1.0.0 Beta (params-1.0.0-beta-*.tsv), 2026-11-26
+VST3: 84 parameters (1.0.0 Beta 84); index, ident, name and default equal for 84
+CLAP: 83 parameters (1.0.0 Beta 83); index, ident, name and default equal for 83
+AU: 83 parameters (1.0.0 Beta 83); index, ident, name and default equal for 83
+RESULT: PASS

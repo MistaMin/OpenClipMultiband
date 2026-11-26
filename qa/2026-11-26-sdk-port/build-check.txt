@@ -1,0 +1,16 @@
+cargo tree -i goodlookindri / -i goodlookindri-shell (2026-11-26, SDK 19fac89)
+goodlookindri v0.2.1 (Dependencies/OpenPluginSDK/crates/goodlookindri)
+├── goodlookindri-shell v0.2.1 (Dependencies/OpenPluginSDK/crates/goodlookindri/shell)
+│   ├── openclipmultiband v1.0.0-beta (OpenGrid/OpenClipMultiband)
+│   └── openplugin-dri v1.0.0-beta (Dependencies/OpenPluginSDK/crates/openplugin-dri)
+goodlookindri-shell v0.2.1 (Dependencies/OpenPluginSDK/crates/goodlookindri/shell)
+
+Packages from the sibling Dependencies/GoodLookinDri folder: 0
+build.sh notes: 0
+
+Bundles in dist/ (lipo, LC_BUILD_VERSION minos):
+  dist/OpenClipMultiband.vst3/Contents/MacOS/OpenClipMultiband: x86_64 arm64, macOS 11.0
+  dist/OpenClipMultiband.component/Contents/MacOS/OpenClipMultiband: x86_64 arm64, macOS 11.0
+  dist/OpenClipMultiband.clap/Contents/MacOS/OpenClipMultiband: x86_64 arm64, macOS 11.0
+  dist/OpenClipMultiband.lv2/OpenClipMultiband.dylib: x86_64 arm64, macOS 11.0
+  dist/OpenClipMultiband.aaxplugin/Contents/MacOS/OpenClipMultiband: x86_64 arm64, macOS 11.0

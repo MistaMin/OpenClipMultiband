@@ -80,9 +80,9 @@ at 1x, 19 % at 4x, 56 % at 16x; 32x and 64x are for offline renders.
 
 ## Build from source
 
-Rust (stable). Builds against [OpenPluginSDK](https://github.com/MistaMin/OpenPluginSDK) and
-[GoodLookin DRI](https://github.com/MistaMin/GoodLookinDri) checked out beside it
-(`../../Dependencies/OpenPluginSDK`, `../../Dependencies/GoodLookinDri`; revisions in `scripts/build.sh`).
+Rust (stable). Builds against [OpenPluginSDK](https://github.com/MistaMin/OpenPluginSDK) checked out beside it
+(`../../Dependencies/OpenPluginSDK`, revision in `scripts/build.sh`), which carries
+[GoodLookin DRI](https://github.com/MistaMin/GoodLookinDri) in its tree.
 
 ```bash
 cargo test --release --workspace   # algorithms, clip section, plugin and editor tests

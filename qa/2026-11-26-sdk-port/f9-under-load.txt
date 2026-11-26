@@ -1,0 +1,24 @@
+F9 (existing, not from the port): CLAP and AU in REAPER are sometimes not repeatable while the Mac is heavily loaded
+2026-11-26, REAPER 7.80, reaper_qa.py suite; load averages 17 to 73 from other sessions on this machine.
+
+Runs of the CLAP suite (reports in reaper/clap-under-load/ and reaper/first-run/):
+  first run, port build, OpenGrid9 suites running alongside: from the Input Gain sweep on, every render exact zeros
+      (AU in the same first run: zeros from the Band 6 context on). Both projects ended with REAPER's FX
+      bypass on (BYPASS 1) and, for CLAP, Wet 0.1. No plug-in panic or silence line was logged.
+  rerun, port build:              repeat render differs by -4.8 dB (1.21 to 1.45 s of the base render only)
+  diagnostic build (port code):   repeat render differs by -4.9 dB (1.31 to 1.35 s)
+  1.0.0 Beta build (old1):        PASS
+  port build (new2):              PASS
+  1.0.0 Beta build (old2):        repeat render differs by -1.5 dB, GUI sweep fails with it
+  port build (new3):              PASS
+VST3 passed both of its runs; AU passed its rerun.
+
+What it is not:
+  - not the port: the same failure comes from the 1.0.0 Beta CLAP (old2), and the port changes no compiled code
+    (sdk-diff.txt; crossbuild.txt: renders bit-identical to 1.0.0 Beta in VST3, CLAP and AU);
+  - not a reset or activation landing during a block: a diagnostic build logged every CLAP reset on the render
+    thread before its first block, and activation only from the main thread with no block running, also in the
+    failing run;
+  - not timing logic in the CLAP wrapper or the plug-in: neither reads a clock while processing.
+Cause not found. To look at separately: REAPER's CLAP and AU render path under load, and the QA bridge's
+handling of REAPER's own Bypass and Wet controls (the projects that went silent ended with bypass on).
