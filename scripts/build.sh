@@ -5,7 +5,7 @@
 set -e
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 SDK="$(cd "$ROOT/../../Dependencies/OpenPluginSDK" && pwd)"
-SDK_REV=c6fa6a03560443191e1045db47c45a1839c65696
+SDK_REV=53e198c7448ea755d2dfc451eaa2649599533431
 DRI="$ROOT/../../Dependencies/GoodLookinDri"
 DRI_REV=3fe04263a7e1eb21931717393d0f1d705417e884
 

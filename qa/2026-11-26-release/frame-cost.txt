@@ -1,0 +1,4 @@
+ 8:01  up 2 days,  5:03, 46 users, load averages: 18.61 14.19 10.36
+4 bands, panel closed (1080x768 @2x):  15.42 ms/frame
+4 bands, panel open (1080x768 @2x):  15.36 ms/frame
+6 bands, panel open (1080x768 @2x):  16.72 ms/frame

@@ -424,9 +424,27 @@ fn soft_core(u: f64, s: f64) -> Pt {
     Pt { f: s * u / r, big_f: s * r - s * s, df: s * s * s / (r * r * r) }
 }
 
-/// Soft saturator driven harder above 1.8 kHz (matched emphasis pair). Shape lowers the
-/// saturation level (1.0 to 0.25 of the ceiling); Character raises the high-frequency drive (up
-/// to +9.5 dB).
+/// Linear up to `t`, then `soft_core`'s algebraic knee rising towards 1 (the ceiling), slope 1 at
+/// the join. Shape moves `t`: the saturation starts later, the output stays nearer the ceiling.
+fn soft_knee(u: f64, t: f64) -> Pt {
+    let a = u.abs();
+    if a <= t {
+        return Pt { f: u, big_f: 0.5 * u * u, df: 1.0 };
+    }
+    let w = 1.0 - t;
+    let k = soft_core((a - t) / w, 1.0);
+    Pt { f: u.signum() * (t + w * k.f), big_f: 0.5 * t * t + t * (a - t) + w * w * k.big_f, df: k.df }
+}
+
+/// Where Magnet's and Volt's knee starts, in units of the ceiling: 0.6 (4.4 dB under) at Shape 0,
+/// the first sample at Shape 1.
+fn knee_start(shape: f64) -> f64 {
+    0.6 * (1.0 - shape)
+}
+
+/// Soft saturator driven harder above 1.8 kHz (matched emphasis pair), rising towards the ceiling.
+/// Shape softens it (the knee starts 4.4 dB under the ceiling at 0, from the first sample at 1);
+/// Character raises the high-frequency drive (up to +9.5 dB).
 pub struct Ferro {
     g: Glide,
     lp: f64,
@@ -472,7 +490,7 @@ impl Shaper for Ferro {
     }
     fn curve(&self, x: f64) -> Pt {
         let [c, shape, _] = self.g.cur;
-        scaled(c, soft_core(x / c, 1.0 - 0.75 * shape))
+        scaled(c, soft_knee(x / c, knee_start(shape)))
     }
     fn post(&mut self, y: [f64; 2]) -> [f64; 2] {
         let [c, _, character] = self.g.cur;
@@ -487,9 +505,9 @@ impl Shaper for Ferro {
     }
 }
 
-/// Soft saturator with overload recovery and an output slew limit. Shape lowers the saturation
-/// level (1.0 to 0.35 of the ceiling); Character speeds recovery (30 to 2 ms) and raises the slew
-/// limit (8 to 80 kHz).
+/// Soft saturator with overload recovery and an output slew limit, rising towards the ceiling.
+/// Shape softens it (as Magnet); Character speeds recovery (30 to 2 ms) and raises the slew limit
+/// (8 to 80 kHz).
 pub struct Rail {
     g: Glide,
     rate: f64,
@@ -537,7 +555,7 @@ impl Shaper for Rail {
     }
     fn curve(&self, x: f64) -> Pt {
         let [c, shape, _] = self.g.cur;
-        scaled(c, soft_core(x / c, 1.0 - 0.65 * shape))
+        scaled(c, soft_knee(x / c, knee_start(shape)))
     }
     fn post(&mut self, y: [f64; 2]) -> [f64; 2] {
         let [c, _, character] = self.g.cur;

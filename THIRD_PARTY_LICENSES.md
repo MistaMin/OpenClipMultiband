@@ -12,10 +12,10 @@ carries copies of the licence texts in `Licenses/`.
 | Source Sans Pro (Adobe) | editor lettering, embedded in GoodLookinDri | SIL Open Font License 1.1 (`Licenses/SourceSansPro-OFL.txt`) |
 | Rust standard library | all code | MIT or Apache License 2.0 |
 | fontdue, ttf-parser | lettering | MIT or Apache License 2.0 (fontdue also Zlib) |
-| rustfft, num-complex, num-integer, num-traits, primal-check, strength_reduce, transpose | FFTs for the crossover spectrum, spectrograph and 3D view | MIT or Apache License 2.0 |
+| rustfft, num-complex, num-integer, num-traits, primal-check, strength_reduce, transpose | FFTs for the crossover strip's spectrum | MIT or Apache License 2.0 |
 | ahash, allocator-api2, cfg-if, hashbrown, itoa, log, memchr, once_cell, serde, serde_core, serde_derive, serde_json, zerocopy, zmij | support and state serialization libraries | MIT or Apache License 2.0 (memchr also Unlicense; zerocopy also BSD 2-Clause; zmij MIT) |
 | libc, bitflags, windows-sys, windows-link | system interfaces (per platform) | MIT or Apache License 2.0 |
-| x11rb, rustix, errno, linux-raw-sys, gethostname | Linux system interfaces | MIT or Apache License 2.0 (linux-raw-sys also Apache-2.0 WITH LLVM-exception) |
+| x11rb, x11rb-protocol, rustix, errno, linux-raw-sys, gethostname | Linux system interfaces (editor and history windows) | MIT or Apache License 2.0 (linux-raw-sys also Apache-2.0 WITH LLVM-exception) |
 | proc-macro2, quote, syn, unicode-ident | compile-time procedural macros (`serde_derive`) | MIT or Apache License 2.0 (unicode-ident also Unicode-3.0) |
 | CLAP | CLAP format | MIT |
 | LV2 | LV2 format (interface written from the specification; no LV2 code linked) | ISC |

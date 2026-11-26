@@ -1,0 +1,75 @@
+# OpenClip Multiband REAPER suite contexts and exceptions (2026-11-25). Values are normalised 0..1.
+# Context lines test a parameter in the state where it acts; exceptions carry their reason.
+
+Crossover 4 @ Bands=0.8
+Crossover 5 @ Bands=1
+audio:Bands Open    # opens the band panel in the editor; no audio by design
+
+Band 1 Drive @ Bands Open=1
+Band 1 Ceiling @ Bands Open=1, All Bands Ceiling=0.5   # +24 offset reaches 0 dBFS only from a lower ALL ceiling
+Band 1 Gain @ Bands Open=1
+Band 1 Bypass @ All Bands Drive=1   # bypass is only heard while the band clips
+Band 2 Drive @ Bands Open=1
+Band 2 Ceiling @ Bands Open=1, All Bands Ceiling=0.5   # +24 offset reaches 0 dBFS only from a lower ALL ceiling
+Band 2 Gain @ Bands Open=1
+Band 2 Bypass @ All Bands Drive=1   # bypass is only heard while the band clips
+Band 3 Drive @ Bands Open=1
+Band 3 Ceiling @ Bands Open=1, All Bands Ceiling=0.5   # +24 offset reaches 0 dBFS only from a lower ALL ceiling
+Band 3 Gain @ Bands Open=1
+Band 3 Bypass @ All Bands Drive=1   # bypass is only heard while the band clips
+Band 4 Drive @ Bands Open=1
+Band 4 Ceiling @ Bands Open=1, All Bands Ceiling=0.5   # +24 offset reaches 0 dBFS only from a lower ALL ceiling
+Band 4 Gain @ Bands Open=1
+Band 4 Bypass @ All Bands Drive=1   # bypass is only heard while the band clips
+Band 5 Drive @ Bands=0.8, Bands Open=1
+Band 5 Ceiling @ Bands=0.8, Bands Open=1, All Bands Ceiling=0.5   # +24 offset reaches 0 dBFS only from a lower ALL ceiling
+Band 5 Gain @ Bands=0.8, Bands Open=1
+Band 5 Solo @ Bands=0.8, Bands Open=0
+Band 5 Mute @ Bands=0.8, Bands Open=0
+Band 5 Bypass @ Bands=0.8, All Bands Drive=1   # bypass is only heard while the band clips
+Band 6 Drive @ Bands=1, Bands Open=1
+Band 6 Ceiling @ Bands=1, Bands Open=1, All Bands Ceiling=0.5   # +24 offset reaches 0 dBFS only from a lower ALL ceiling
+Band 6 Gain @ Bands=1, Bands Open=1
+Band 6 Solo @ Bands=1, Bands Open=0
+Band 6 Mute @ Bands=1, Bands Open=0
+Band 6 Bypass @ Bands=1, All Bands Drive=1   # bypass is only heard while the band clips
+
+# The clipper is only heard while something clips: drive it.
+Shape @ All Bands Drive=1
+Character @ All Bands Drive=1
+Algorithm @ All Bands Drive=1
+Anti-Alias @ All Bands Drive=1
+Oversampling @ All Bands Drive=1
+Single/Multi Blend @ All Bands Drive=1
+Dry/Wet Mix @ All Bands Drive=1
+Single Drive @ Single/Multi Blend=0
+Single Ceiling @ Single/Multi Blend=0
+Output Ceiling @ Input Gain=1
+Output Ceiling On @ Input Gain=1
+Drawn Curve @ All Bands Drive=1
+Curve Point 1 @ Drawn Curve=1, All Bands Drive=1
+Curve Point 2 @ Drawn Curve=1, All Bands Drive=1
+Curve Point 3 @ Drawn Curve=1, All Bands Drive=1
+Curve Point 4 @ Drawn Curve=1, All Bands Drive=1
+Curve Point 5 @ Drawn Curve=1, All Bands Drive=1
+Curve Point 6 @ Drawn Curve=1, All Bands Drive=1
+Curve Point 7 @ Drawn Curve=1, All Bands Drive=1
+Curve Point 8 @ Drawn Curve=1, All Bands Drive=1
+Curve Point 9 @ Drawn Curve=1, All Bands Drive=1
+Curve Point 10 @ Drawn Curve=1, All Bands Drive=1
+Curve Point 11 @ Drawn Curve=1, All Bands Drive=1
+Curve Point 12 @ Drawn Curve=1, All Bands Drive=1
+Curve Point 13 @ Drawn Curve=1, All Bands Drive=1
+Curve Point 14 @ Drawn Curve=1, All Bands Drive=1
+Curve Point 15 @ Drawn Curve=1, All Bands Drive=1
+Curve Point 16 @ Drawn Curve=1, All Bands Drive=1
+
+# Host-provided parameters (matched by ident, so the plugin's own "Delta" (4:4) stays tested).
+visual:80:1113149523   # VST3 host bypass the SDK shell adds; the host's own bypass button is its control
+visual:81:bypass       # REAPER's own FX bypass
+visual:82:wet          # REAPER's own FX wet knob
+visual:83:delta        # REAPER's own delta solo (the plugin's Delta is parameter 4 and has its button)
+
+# LV2 (OpenGrid9): the host's freewheel port (lv2:freeWheeling) is a control input the host sets during export.
+audio:Freewheel        # host-owned LV2 port, changes no sound by design
+visual:Freewheel       # host-owned LV2 port, no control by design

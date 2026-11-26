@@ -434,6 +434,28 @@ impl Module for Clipper {
 mod tests {
     use super::*;
 
+    /// Magnet and Volt rise towards the ceiling: a sine 6 dB over a 0 dBFS ceiling comes out within
+    /// 1.5 dB of it at every Shape (it used to level off 3 to 5 dB under), and never far above it.
+    #[test]
+    fn magnet_and_volt_reach_the_ceiling() {
+        for name in ["Magnet", "Volt"] {
+            for shape in [0.0f32, 0.5, 1.0] {
+                let mut e = (ENGINES.iter().find(|e| e.0 == name).expect(name).1)();
+                e.prepare(48_000.0, 512);
+                e.set(1.0, shape, 0.0);
+                let n = 48_000;
+                let mut l: Vec<f32> = (0..n).map(|i| 2.0 * (std::f32::consts::TAU * 200.0 * i as f32 / 48_000.0).sin()).collect();
+                let mut r = l.clone();
+                for (a, b) in l.chunks_mut(512).zip(r.chunks_mut(512)) {
+                    e.process(a, b);
+                }
+                let peak = l[n / 2..].iter().fold(0.0f32, |m, v| m.max(v.abs()));
+                let db = 20.0 * peak.log10();
+                assert!((-1.5..=0.3).contains(&db), "{name} shape {shape}: peak {db:.2} dB");
+            }
+        }
+    }
+
     fn sine(n: usize, amp: f32) -> Vec<f32> {
         (0..n).map(|t| amp * (t as f32 * 0.05).sin()).collect()
     }

@@ -70,11 +70,12 @@ Drag a knob, scroll over it, or double-click it to type a value.
 | **Flint** | Knee width, from razor-hard (0 %) to rounded | no effect |
 | **Ghost** | Knee of the look-ahead gain: hard at 0 %, starting 6 dB under the ceiling at 100 % | Extra recovery after a peak, up to 30 ms: less distortion on bass |
 | **Ember** | Emphasis: highs reach the curve up to 12 dB louder, so they clip first and the distortion comes out darker | Even harmonics (asymmetry); a 5 Hz DC blocker follows |
-| **Magnet** | Saturation level: lower keeps the curve gentler and its top nearer the ceiling | How much harder frequencies above 1.8 kHz are driven, up to +9.5 dB |
-| **Volt** | Saturation level | Recovery after overload (30 to 2 ms) and output slew limit (8 to 80 kHz) |
+| **Magnet** | Softness: the saturation starts 4.4 dB under the ceiling at 0 %, from the first sample at 100 % | How much harder frequencies above 1.8 kHz are driven, up to +9.5 dB |
+| **Volt** | Softness, as Magnet | Recovery after overload (30 to 2 ms) and output slew limit (8 to 80 kHz) |
 
-Magnet and Volt saturate rather than hit a hard ceiling: their curve flattens out under the ceiling (about 3 to 5 dB
-under at Shape 50 %), so they come out quieter. Use Gain to make up the level. Ghost on steady tones above
+Magnet and Volt saturate rather than hit a hard ceiling: their curve rises towards the ceiling without quite reaching
+it. A sine 6 dB over comes out 0.1 dB under the ceiling at Shape 0 %, 0.5 dB at 50 % and 1 dB at 100 %; Volt's
+overload recovery takes it a little lower. Ghost on steady tones above
 about 500 Hz behaves like a 1 ms limiter rather than a waveshaper; its character shows on bass and mixed material.
 
 Switching the algorithm crossfades over 10 ms.
@@ -173,8 +174,9 @@ level with Drive, not Output Gain, when the ceiling must hold.
 - **Linux (x86_64):** VST3, CLAP and LV2.
 - No standalone application.
 
-Tested on macOS in REAPER (VST3, CLAP, Audio Unit) and OpenGrid9 (VST3, Audio Unit; LV2 loads and renders). Not yet
-listened to, and not yet tested in Pro Tools, Logic, or on Windows or Linux.
+Tested on macOS in REAPER (VST3, CLAP, Audio Unit), OpenGrid9 (VST3, Audio Unit, LV2) and Pro Tools Studio 2025.10
+(AAX). Windows and Linux builds pass the automated tests but have not been tested in a host; Logic Pro has not been
+tested.
 
 ## Licence
 

@@ -1390,6 +1390,10 @@ mod tests {
             e.theme = th;
             e.param_changed(P_AUTO_GAIN, 1.0);
             e.param_changed(P_BLEND, 70.0);
+            if name.starts_with("6band") {
+                // One shot with a saturating algorithm: Magnet's curve rising to the ceiling.
+                e.param_changed(P_ALGORITHM, clip::engine_index("Magnet").expect("Magnet") as f32);
+            }
             if drawn {
                 e.mouse_down(PENCIL_RECT.0 + 10.0, PENCIL_RECT.1 + 10.0, 1);
                 e.mouse_up(PENCIL_RECT.0 + 10.0, PENCIL_RECT.1 + 10.0);

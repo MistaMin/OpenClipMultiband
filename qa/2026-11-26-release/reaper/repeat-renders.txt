@@ -1,0 +1,1 @@
+20 renders of the same project, VST3 on SDK 53e198c: largest difference from render 1 -300.0 dB; renders differing: none; peak -4.1 dBFS

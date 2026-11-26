@@ -69,3 +69,7 @@ visual:80:1113149523   # VST3 host bypass the SDK shell adds; the host's own byp
 visual:81:bypass       # REAPER's own FX bypass
 visual:82:wet          # REAPER's own FX wet knob
 visual:83:delta        # REAPER's own delta solo (the plugin's Delta is parameter 4 and has its button)
+
+# LV2 (OpenGrid9): the host's freewheel port (lv2:freeWheeling) is a control input the host sets during export.
+audio:Freewheel        # host-owned LV2 port, changes no sound by design
+visual:Freewheel       # host-owned LV2 port, no control by design

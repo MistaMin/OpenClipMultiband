@@ -13,7 +13,7 @@ crate-type = ["cdylib", "staticlib", "rlib"]
 [dependencies]
 olm-api = { path = "crates/api" }
 clip = { path = "crates/clip" }
-# OpenPluginSDK main (c6fa6a0) and GoodLookin DRI main (3fe0426) side by side in
+# OpenPluginSDK main (53e198c) and GoodLookin DRI main (3fe0426) side by side in
 # ../../Dependencies.
 openplugin = { path = "../../Dependencies/OpenPluginSDK/crates/openplugin" }
 # Text measuring for the kit; the SDK takes the same checkout.

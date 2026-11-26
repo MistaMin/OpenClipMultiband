@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.0.0 Beta - 2026-11-26
 
 First version, built from OpenMultiband 1.0.0 Beta.
 
@@ -14,3 +14,5 @@ First version, built from OpenMultiband 1.0.0 Beta.
   once and settles at 6 dB a second, so it stays steady under heavy clipping.
 - Value text for hosts and the editor: whole dB, ceilings in tenths, at most three digits, kHz from 1000 Hz. Curve
   points are percent of the ceiling.
+- Magnet and Volt rise towards the ceiling (they used to level off 3 to 5 dB under it); Shape now sets how soft their
+  knee is.
