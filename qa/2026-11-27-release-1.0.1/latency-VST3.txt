@@ -1,0 +1,8 @@
+Hann-B1, 1x          pdc    0 ->  126 (changes at - s)  render vs source -240.0 dB
+Hann-B1, 4x          pdc  126 ->  151 (changes at - s)  render vs source -29.6 dB
+Hann-B1, 64x         pdc  151 ->  151 (changes at - s)  render vs source -29.6 dB
+No ADAA, 64x         pdc  151 ->  151 (changes at - s)  render vs source -29.6 dB
+Adaptive, 4x         pdc  151 ->  151 (changes at - s)  render vs source -20.0 dB
+Zero Latency on      pdc  151 ->    0 (changes at - s)  render vs source -5.7 dB
+Zero Latency off     pdc    0 ->  151 (changes at - s)  render vs source -20.0 dB
+Hann-B1, 1x again    pdc  151 ->  126 (changes at - s)  render vs source -240.0 dB

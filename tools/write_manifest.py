@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Writes opengrid-manifest.json (schema 2) for an OpenClipMultiband release.
 
-  tools/write_manifest.py --version 1.0.0-Beta --released 2026-11-25 --out DIR/opengrid-manifest.json \
+  tools/write_manifest.py --version 1.0.1 --released 2026-11-27 --out DIR/opengrid-manifest.json \
       [--mac PKG] [--windows EXE] [--linux TAR_GZ]
 
 Size and SHA-256 come from each final file (after signing, notarization and stapling).

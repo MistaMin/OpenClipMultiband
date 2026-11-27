@@ -10,7 +10,7 @@ on:
 
 env:
   # The revisions this build is made and tested with (as in scripts/build.sh).
-  OPENPLUGIN_SDK_REF: d93d926c09ce6ff90193d5824fc5ae831f321f0d
+  OPENPLUGIN_SDK_REF: 07f97e1f8fe6a2be3a3cfc2f390f81b01837f077
   VST3_SDK_REF: v3.8.1_build_84
   CARGO_TERM_COLOR: always
 

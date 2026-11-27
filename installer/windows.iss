@@ -1,5 +1,5 @@
 ; Windows installer for OpenClipMultiband: VST3, CLAP and LV2, one choice per format.
-; Built by .github/workflows/build.yml:  iscc /DVersion=1.0.0-Beta /DDist=<dist> /DRoot=<repo> installer\windows.iss
+; Built by .github/workflows/build.yml:  iscc /DVersion=1.0.1 /DDist=<dist> /DRoot=<repo> installer\windows.iss
 #ifndef Version
   #define Version "0.0.0"
 #endif

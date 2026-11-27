@@ -10,27 +10,29 @@ By OpenGrid.
 |---|---|---|---|
 | ![Drawn curve](docs/images/4band-drawn-dark.png) | ![Bands open](docs/images/4band-open-dark.png) | ![6 bands](docs/images/6band-open-graphite.png) | ![Light](docs/images/3band-light.png) |
 
-## Version 1.0.0 Beta
+## Version 1.0.1
 
-- Three phase-aligned paths: per-band clipping (Multi), full-band clipping (Single) and Dry, with Single-Multi and
-  Dry-Wet blends, then a true-peak Output Ceiling (-1.0 dB).
-- Six algorithms (Honey, Flint, Ghost, Ember, Magnet, Volt), each through fitted-slope Hann-B1 ADAA, adaptive ADAA or
-  none, at 1x, 4x, 8x, 16x, 32x or 64x oversampling. Or draw your own curve.
-- One Drive / Ceiling / Gain set for all bands that opens into each band's own offsets (±24 dB).
-- A large history of the original against the clipped signal, the whole mix and each band in its own colour, that pops
-  out into a resizable window of its own.
-- Auto Gain, Delta, Zero Latency and seven themes.
+A maintenance release: the sound, the controls and the editor are the same as in 1.0.0 Beta, and sessions reopen
+unchanged.
+
+- Hosts realign at once when Anti-Alias, Oversampling or Zero Latency changes: the new latency is reported in the
+  same block as the change.
+- A 600 ms tail is reported, so hosts render the crossovers' ring-down to its end.
+- One invalid input sample (NaN or infinity) no longer silences the plug-in or freezes Auto Gain.
+- The maximum latency given to hosts is the real worst case, so the AU and AAX bypass delay is long enough at every
+  sample rate; rates below 8 kHz are refused.
+- Curve points 1, 3, 5 and 7 default to whole percents in every format.
 
 ## Download
 
-From the [1.0.0 Beta release](https://github.com/MistaMin/OpenClipMultiband/releases/tag/v1.0.0-beta):
+From the [1.0.1 release](https://github.com/MistaMin/OpenClipMultiband/releases/tag/v1.0.1):
 
 | Download | System | Formats |
 |---|---|---|
-| [`OpenClipMultiband-1.0.0-Beta-macos.pkg`](https://github.com/MistaMin/OpenClipMultiband/releases/download/v1.0.0-beta/OpenClipMultiband-1.0.0-Beta-macos.pkg) | macOS 11 or later, Apple silicon and Intel (universal) | VST3, Audio Unit, CLAP, LV2, AAX |
-| [`OpenClipMultiband-1.0.0-Beta-windows-x64-setup.exe`](https://github.com/MistaMin/OpenClipMultiband/releases/download/v1.0.0-beta/OpenClipMultiband-1.0.0-Beta-windows-x64-setup.exe) | Windows 10 or later, x64 | VST3, CLAP, LV2 |
-| [`OpenClipMultiband-1.0.0-Beta-linux-x86_64.tar.gz`](https://github.com/MistaMin/OpenClipMultiband/releases/download/v1.0.0-beta/OpenClipMultiband-1.0.0-Beta-linux-x86_64.tar.gz) | Linux x86_64 (glibc 2.35+) | VST3, CLAP, LV2 |
-| [`OpenClipMultiband-User-Manual.pdf`](https://github.com/MistaMin/OpenClipMultiband/releases/download/v1.0.0-beta/OpenClipMultiband-User-Manual.pdf) | All systems | User manual and parameter reference |
+| [`OpenClipMultiband-1.0.1-macos.pkg`](https://github.com/MistaMin/OpenClipMultiband/releases/download/v1.0.1/OpenClipMultiband-1.0.1-macos.pkg) | macOS 11 or later, Apple silicon and Intel (universal) | VST3, Audio Unit, CLAP, LV2, AAX |
+| [`OpenClipMultiband-1.0.1-windows-x64-setup.exe`](https://github.com/MistaMin/OpenClipMultiband/releases/download/v1.0.1/OpenClipMultiband-1.0.1-windows-x64-setup.exe) | Windows 10 or later, x64 | VST3, CLAP, LV2 |
+| [`OpenClipMultiband-1.0.1-linux-x86_64.tar.gz`](https://github.com/MistaMin/OpenClipMultiband/releases/download/v1.0.1/OpenClipMultiband-1.0.1-linux-x86_64.tar.gz) | Linux x86_64 (glibc 2.35+) | VST3, CLAP, LV2 |
+| [`OpenClipMultiband-User-Manual.pdf`](https://github.com/MistaMin/OpenClipMultiband/releases/download/v1.0.1/OpenClipMultiband-User-Manual.pdf) | All systems | User manual and parameter reference |
 
 The macOS installer lets you choose any combination of VST3, Audio Unit, CLAP, LV2 and AAX, and installs the manual and
 licences into `/Library/Application Support/OpenClipMultiband`. It is signed with Developer ID and notarized by Apple;
@@ -38,7 +40,8 @@ the AAX bundle is digitally signed with PACE Eden for Pro Tools. The Windows ins
 SmartScreen may ask before it runs.
 
 **Limits of this release:** Windows and Linux binaries are built by GitHub Actions and passed the automated tests only,
-not a DAW host; no standalone app; Logic Pro has not been tested.
+not a DAW host; the AAX of this version passed Avid's validator but was not run in Pro Tools (1.0.0 Beta was); sample
+rates below 8 kHz are refused; no standalone app; Logic Pro has not been tested.
 
 ## User guide
 

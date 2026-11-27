@@ -1,0 +1,983 @@
+{
+ "fx": "VST3: OpenClip Multiband",
+ "checks": [
+  {
+   "check": "loads",
+   "status": "PASS",
+   "detail": "VST3: OpenClip Multiband (OpenGrid), 84 parameters"
+  },
+  {
+   "check": "finite output",
+   "status": "PASS",
+   "detail": "peak -4.1 dBFS"
+  },
+  {
+   "check": "not silent",
+   "status": "PASS",
+   "detail": "rms -14.9 dBFS"
+  },
+  {
+   "check": "deterministic render",
+   "status": "PASS",
+   "detail": "repeat differs by -240.0 dB"
+  },
+  {
+   "check": "editor opens",
+   "status": "PASS",
+   "detail": "1080x821, 0.5% animates by itself"
+  },
+  {
+   "check": "every parameter changes the sound",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "every parameter is shown in the GUI",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "state survives save and reopen",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "check": "editor reopens",
+   "status": "PASS",
+   "detail": "5 close/open cycles"
+  }
+ ],
+ "params": [
+  {
+   "index": 0,
+   "name": "Input Gain",
+   "ident": "0:0",
+   "default": 0.5,
+   "context": "",
+   "audioDiffDb": -1.4,
+   "audio": "ok",
+   "visualChange": 7.928,
+   "visual": "ok"
+  },
+  {
+   "index": 1,
+   "name": "Output Gain",
+   "ident": "1:1",
+   "default": 0.5,
+   "context": "",
+   "audioDiffDb": -0.6,
+   "audio": "ok",
+   "visualChange": 5.063,
+   "visual": "ok"
+  },
+  {
+   "index": 2,
+   "name": "Zero Latency",
+   "ident": "2:2",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -6.0,
+   "audio": "ok",
+   "visualChange": 3.47,
+   "visual": "ok"
+  },
+  {
+   "index": 3,
+   "name": "Auto Gain",
+   "ident": "3:3",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -6.0,
+   "audio": "ok",
+   "visualChange": 3.129,
+   "visual": "ok"
+  },
+  {
+   "index": 4,
+   "name": "Delta",
+   "ident": "4:4",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -4.0,
+   "audio": "ok",
+   "visualChange": 2.518,
+   "visual": "ok"
+  },
+  {
+   "index": 5,
+   "name": "Bands",
+   "ident": "5:5",
+   "default": 0.6000000238,
+   "context": "",
+   "audioDiffDb": -1.7,
+   "audio": "ok",
+   "visualChange": 4.715,
+   "visual": "ok"
+  },
+  {
+   "index": 6,
+   "name": "Crossover Slope",
+   "ident": "6:6",
+   "default": 0.5,
+   "context": "",
+   "audioDiffDb": 1.4,
+   "audio": "ok",
+   "visualChange": 3.502,
+   "visual": "ok"
+  },
+  {
+   "index": 7,
+   "name": "Crossover 1",
+   "ident": "7:7",
+   "default": 0.259383738,
+   "context": "",
+   "audioDiffDb": -1.2,
+   "audio": "ok",
+   "visualChange": 3.311,
+   "visual": "ok"
+  },
+  {
+   "index": 8,
+   "name": "Crossover 2",
+   "ident": "8:8",
+   "default": 0.5246770978,
+   "context": "",
+   "audioDiffDb": -1.4,
+   "audio": "ok",
+   "visualChange": 3.515,
+   "visual": "ok"
+  },
+  {
+   "index": 9,
+   "name": "Crossover 3",
+   "ident": "9:9",
+   "default": 0.7253637314,
+   "context": "",
+   "audioDiffDb": -1.5,
+   "audio": "ok",
+   "visualChange": 2.954,
+   "visual": "ok"
+  },
+  {
+   "index": 10,
+   "name": "Crossover 4",
+   "ident": "10:10",
+   "default": 0.8673533201,
+   "context": "Bands=0.8",
+   "audioDiffDb": -2.2,
+   "audio": "ok",
+   "visualChange": 4.696,
+   "visual": "ok"
+  },
+  {
+   "index": 11,
+   "name": "Crossover 5",
+   "ident": "11:11",
+   "default": 0.9483659863,
+   "context": "Bands=1",
+   "audioDiffDb": -1.9,
+   "audio": "ok",
+   "visualChange": 4.614,
+   "visual": "ok"
+  },
+  {
+   "index": 12,
+   "name": "Algorithm",
+   "ident": "12:12",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audioDiffDb": 3.8,
+   "audio": "ok",
+   "visualChange": 10.213,
+   "visual": "ok"
+  },
+  {
+   "index": 13,
+   "name": "Shape",
+   "ident": "13:13",
+   "default": 0.8000000119,
+   "context": "All Bands Drive=1",
+   "audioDiffDb": -5.3,
+   "audio": "ok",
+   "visualChange": 9.883,
+   "visual": "ok"
+  },
+  {
+   "index": 14,
+   "name": "Character",
+   "ident": "14:14",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audioDiffDb": -13.8,
+   "audio": "ok",
+   "visualChange": 9.77,
+   "visual": "ok"
+  },
+  {
+   "index": 15,
+   "name": "Single/Multi Blend",
+   "ident": "15:15",
+   "default": 1,
+   "context": "All Bands Drive=1",
+   "audioDiffDb": -1.4,
+   "audio": "ok",
+   "visualChange": 9.947,
+   "visual": "ok"
+  },
+  {
+   "index": 16,
+   "name": "Dry/Wet Mix",
+   "ident": "16:16",
+   "default": 1,
+   "context": "All Bands Drive=1",
+   "audioDiffDb": -1.4,
+   "audio": "ok",
+   "visualChange": 10.385,
+   "visual": "ok"
+  },
+  {
+   "index": 17,
+   "name": "Single Drive",
+   "ident": "17:17",
+   "default": 0,
+   "context": "Single/Multi Blend=0",
+   "audioDiffDb": -1.9,
+   "audio": "ok",
+   "visualChange": 7.671,
+   "visual": "ok"
+  },
+  {
+   "index": 18,
+   "name": "Single Ceiling",
+   "ident": "18:18",
+   "default": 1,
+   "context": "Single/Multi Blend=0",
+   "audioDiffDb": -3.5,
+   "audio": "ok",
+   "visualChange": 3.119,
+   "visual": "ok"
+  },
+  {
+   "index": 19,
+   "name": "Output Ceiling On",
+   "ident": "19:19",
+   "default": 1,
+   "context": "Input Gain=1",
+   "audioDiffDb": 2.3,
+   "audio": "ok",
+   "visualChange": 8.763,
+   "visual": "ok"
+  },
+  {
+   "index": 20,
+   "name": "Output Ceiling",
+   "ident": "20:20",
+   "default": 0.9583333135,
+   "context": "Input Gain=1",
+   "audioDiffDb": -1.1,
+   "audio": "ok",
+   "visualChange": 8.361,
+   "visual": "ok"
+  },
+  {
+   "index": 21,
+   "name": "Anti-Alias",
+   "ident": "21:21",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audioDiffDb": 3.7,
+   "audio": "ok",
+   "visualChange": 4.693,
+   "visual": "ok"
+  },
+  {
+   "index": 22,
+   "name": "Oversampling",
+   "ident": "22:22",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audioDiffDb": 4.0,
+   "audio": "ok",
+   "visualChange": 9.186,
+   "visual": "ok"
+  },
+  {
+   "index": 23,
+   "name": "Bands Open",
+   "ident": "23:23",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -3.7,
+   "audio": "excused",
+   "visualChange": 4.86,
+   "visual": "ok"
+  },
+  {
+   "index": 24,
+   "name": "Drawn Curve",
+   "ident": "24:24",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audioDiffDb": -2.6,
+   "audio": "ok",
+   "visualChange": 9.916,
+   "visual": "ok"
+  },
+  {
+   "index": 25,
+   "name": "Curve Point 1",
+   "ident": "25:25",
+   "default": 0.1299999952,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": 2.5,
+   "audio": "ok",
+   "visualChange": 10.924,
+   "visual": "ok"
+  },
+  {
+   "index": 26,
+   "name": "Curve Point 2",
+   "ident": "26:26",
+   "default": 0.25,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": 0.1,
+   "audio": "ok",
+   "visualChange": 10.874,
+   "visual": "ok"
+  },
+  {
+   "index": 27,
+   "name": "Curve Point 3",
+   "ident": "27:27",
+   "default": 0.3799999952,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": -2.4,
+   "audio": "ok",
+   "visualChange": 10.577,
+   "visual": "ok"
+  },
+  {
+   "index": 28,
+   "name": "Curve Point 4",
+   "ident": "28:28",
+   "default": 0.5,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": -2.3,
+   "audio": "ok",
+   "visualChange": 9.816,
+   "visual": "ok"
+  },
+  {
+   "index": 29,
+   "name": "Curve Point 5",
+   "ident": "29:29",
+   "default": 0.6299999952,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": -2.8,
+   "audio": "ok",
+   "visualChange": 10.554,
+   "visual": "ok"
+  },
+  {
+   "index": 30,
+   "name": "Curve Point 6",
+   "ident": "30:30",
+   "default": 0.75,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": -3.0,
+   "audio": "ok",
+   "visualChange": 10.895,
+   "visual": "ok"
+  },
+  {
+   "index": 31,
+   "name": "Curve Point 7",
+   "ident": "31:31",
+   "default": 0.8799999952,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": -2.1,
+   "audio": "ok",
+   "visualChange": 10.282,
+   "visual": "ok"
+  },
+  {
+   "index": 32,
+   "name": "Curve Point 8",
+   "ident": "32:32",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": -0.5,
+   "audio": "ok",
+   "visualChange": 10.103,
+   "visual": "ok"
+  },
+  {
+   "index": 33,
+   "name": "Curve Point 9",
+   "ident": "33:33",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": 0.6,
+   "audio": "ok",
+   "visualChange": 10.092,
+   "visual": "ok"
+  },
+  {
+   "index": 34,
+   "name": "Curve Point 10",
+   "ident": "34:34",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": 2.0,
+   "audio": "ok",
+   "visualChange": 10.65,
+   "visual": "ok"
+  },
+  {
+   "index": 35,
+   "name": "Curve Point 11",
+   "ident": "35:35",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": 2.5,
+   "audio": "ok",
+   "visualChange": 9.984,
+   "visual": "ok"
+  },
+  {
+   "index": 36,
+   "name": "Curve Point 12",
+   "ident": "36:36",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": 2.9,
+   "audio": "ok",
+   "visualChange": 10.514,
+   "visual": "ok"
+  },
+  {
+   "index": 37,
+   "name": "Curve Point 13",
+   "ident": "37:37",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": 2.1,
+   "audio": "ok",
+   "visualChange": 10.062,
+   "visual": "ok"
+  },
+  {
+   "index": 38,
+   "name": "Curve Point 14",
+   "ident": "38:38",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": -1.1,
+   "audio": "ok",
+   "visualChange": 10.64,
+   "visual": "ok"
+  },
+  {
+   "index": 39,
+   "name": "Curve Point 15",
+   "ident": "39:39",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": -0.6,
+   "audio": "ok",
+   "visualChange": 10.635,
+   "visual": "ok"
+  },
+  {
+   "index": 40,
+   "name": "Curve Point 16",
+   "ident": "40:40",
+   "default": 1,
+   "context": "Drawn Curve=1, All Bands Drive=1",
+   "audioDiffDb": 3.2,
+   "audio": "ok",
+   "visualChange": 10.219,
+   "visual": "ok"
+  },
+  {
+   "index": 41,
+   "name": "All Bands Drive",
+   "ident": "41:41",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -1.4,
+   "audio": "ok",
+   "visualChange": 10.034,
+   "visual": "ok"
+  },
+  {
+   "index": 42,
+   "name": "All Bands Ceiling",
+   "ident": "42:42",
+   "default": 1,
+   "context": "",
+   "audioDiffDb": -3.2,
+   "audio": "ok",
+   "visualChange": 3.388,
+   "visual": "ok"
+  },
+  {
+   "index": 43,
+   "name": "All Bands Gain",
+   "ident": "43:43",
+   "default": 0.5,
+   "context": "",
+   "audioDiffDb": -1.7,
+   "audio": "ok",
+   "visualChange": 7.645,
+   "visual": "ok"
+  },
+  {
+   "index": 44,
+   "name": "Band 1 Drive",
+   "ident": "44:44",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audioDiffDb": -0.9,
+   "audio": "ok",
+   "visualChange": 6.803,
+   "visual": "ok"
+  },
+  {
+   "index": 45,
+   "name": "Band 1 Ceiling",
+   "ident": "45:45",
+   "default": 0.5,
+   "context": "Bands Open=1, All Bands Ceiling=0.5",
+   "audioDiffDb": -13.3,
+   "audio": "ok",
+   "visualChange": 5.627,
+   "visual": "ok"
+  },
+  {
+   "index": 46,
+   "name": "Band 1 Gain",
+   "ident": "46:46",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audioDiffDb": 1.0,
+   "audio": "ok",
+   "visualChange": 5.761,
+   "visual": "ok"
+  },
+  {
+   "index": 47,
+   "name": "Band 1 Solo",
+   "ident": "47:47",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -5.7,
+   "audio": "ok",
+   "visualChange": 3.727,
+   "visual": "ok"
+  },
+  {
+   "index": 48,
+   "name": "Band 1 Mute",
+   "ident": "48:48",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -11.8,
+   "audio": "ok",
+   "visualChange": 2.75,
+   "visual": "ok"
+  },
+  {
+   "index": 49,
+   "name": "Band 1 Bypass",
+   "ident": "49:49",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audioDiffDb": -1.2,
+   "audio": "ok",
+   "visualChange": 9.214,
+   "visual": "ok"
+  },
+  {
+   "index": 50,
+   "name": "Band 2 Drive",
+   "ident": "50:50",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audioDiffDb": -1.0,
+   "audio": "ok",
+   "visualChange": 7.857,
+   "visual": "ok"
+  },
+  {
+   "index": 51,
+   "name": "Band 2 Ceiling",
+   "ident": "51:51",
+   "default": 0.5,
+   "context": "Bands Open=1, All Bands Ceiling=0.5",
+   "audioDiffDb": -12.8,
+   "audio": "ok",
+   "visualChange": 5.967,
+   "visual": "ok"
+  },
+  {
+   "index": 52,
+   "name": "Band 2 Gain",
+   "ident": "52:52",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audioDiffDb": 1.1,
+   "audio": "ok",
+   "visualChange": 6.712,
+   "visual": "ok"
+  },
+  {
+   "index": 53,
+   "name": "Band 2 Solo",
+   "ident": "53:53",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -4.9,
+   "audio": "ok",
+   "visualChange": 3.829,
+   "visual": "ok"
+  },
+  {
+   "index": 54,
+   "name": "Band 2 Mute",
+   "ident": "54:54",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -9.7,
+   "audio": "ok",
+   "visualChange": 2.434,
+   "visual": "ok"
+  },
+  {
+   "index": 55,
+   "name": "Band 2 Bypass",
+   "ident": "55:55",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audioDiffDb": -0.4,
+   "audio": "ok",
+   "visualChange": 9.234,
+   "visual": "ok"
+  },
+  {
+   "index": 56,
+   "name": "Band 3 Drive",
+   "ident": "56:56",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audioDiffDb": -0.9,
+   "audio": "ok",
+   "visualChange": 7.315,
+   "visual": "ok"
+  },
+  {
+   "index": 57,
+   "name": "Band 3 Ceiling",
+   "ident": "57:57",
+   "default": 0.5,
+   "context": "Bands Open=1, All Bands Ceiling=0.5",
+   "audioDiffDb": -12.9,
+   "audio": "ok",
+   "visualChange": 5.39,
+   "visual": "ok"
+  },
+  {
+   "index": 58,
+   "name": "Band 3 Gain",
+   "ident": "58:58",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audioDiffDb": 1.0,
+   "audio": "ok",
+   "visualChange": 6.841,
+   "visual": "ok"
+  },
+  {
+   "index": 59,
+   "name": "Band 3 Solo",
+   "ident": "59:59",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -4.5,
+   "audio": "ok",
+   "visualChange": 3.643,
+   "visual": "ok"
+  },
+  {
+   "index": 60,
+   "name": "Band 3 Mute",
+   "ident": "60:60",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -10.8,
+   "audio": "ok",
+   "visualChange": 3.279,
+   "visual": "ok"
+  },
+  {
+   "index": 61,
+   "name": "Band 3 Bypass",
+   "ident": "61:61",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audioDiffDb": -1.2,
+   "audio": "ok",
+   "visualChange": 9.168,
+   "visual": "ok"
+  },
+  {
+   "index": 62,
+   "name": "Band 4 Drive",
+   "ident": "62:62",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audioDiffDb": 1.4,
+   "audio": "ok",
+   "visualChange": 8.291,
+   "visual": "ok"
+  },
+  {
+   "index": 63,
+   "name": "Band 4 Ceiling",
+   "ident": "63:63",
+   "default": 0.5,
+   "context": "Bands Open=1, All Bands Ceiling=0.5",
+   "audioDiffDb": -10.7,
+   "audio": "ok",
+   "visualChange": 5.803,
+   "visual": "ok"
+  },
+  {
+   "index": 64,
+   "name": "Band 4 Gain",
+   "ident": "64:64",
+   "default": 0.5,
+   "context": "Bands Open=1",
+   "audioDiffDb": 0.1,
+   "audio": "ok",
+   "visualChange": 6.627,
+   "visual": "ok"
+  },
+  {
+   "index": 65,
+   "name": "Band 4 Solo",
+   "ident": "65:65",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -6.6,
+   "audio": "ok",
+   "visualChange": 2.781,
+   "visual": "ok"
+  },
+  {
+   "index": 66,
+   "name": "Band 4 Mute",
+   "ident": "66:66",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -8.4,
+   "audio": "ok",
+   "visualChange": 2.886,
+   "visual": "ok"
+  },
+  {
+   "index": 67,
+   "name": "Band 4 Bypass",
+   "ident": "67:67",
+   "default": 0,
+   "context": "All Bands Drive=1",
+   "audioDiffDb": 1.8,
+   "audio": "ok",
+   "visualChange": 8.772,
+   "visual": "ok"
+  },
+  {
+   "index": 68,
+   "name": "Band 5 Drive",
+   "ident": "68:68",
+   "default": 0.5,
+   "context": "Bands=0.8, Bands Open=1",
+   "audioDiffDb": -0.6,
+   "audio": "ok",
+   "visualChange": 9.86,
+   "visual": "ok"
+  },
+  {
+   "index": 69,
+   "name": "Band 5 Ceiling",
+   "ident": "69:69",
+   "default": 0.5,
+   "context": "Bands=0.8, Bands Open=1, All Bands Ceiling=0.5",
+   "audioDiffDb": -13.0,
+   "audio": "ok",
+   "visualChange": 7.44,
+   "visual": "ok"
+  },
+  {
+   "index": 70,
+   "name": "Band 5 Gain",
+   "ident": "70:70",
+   "default": 0.5,
+   "context": "Bands=0.8, Bands Open=1",
+   "audioDiffDb": -0.2,
+   "audio": "ok",
+   "visualChange": 8.563,
+   "visual": "ok"
+  },
+  {
+   "index": 71,
+   "name": "Band 5 Solo",
+   "ident": "71:71",
+   "default": 0,
+   "context": "Bands=0.8, Bands Open=0",
+   "audioDiffDb": -5.7,
+   "audio": "ok",
+   "visualChange": 5.115,
+   "visual": "ok"
+  },
+  {
+   "index": 72,
+   "name": "Band 5 Mute",
+   "ident": "72:72",
+   "default": 0,
+   "context": "Bands=0.8, Bands Open=0",
+   "audioDiffDb": -11.9,
+   "audio": "ok",
+   "visualChange": 4.683,
+   "visual": "ok"
+  },
+  {
+   "index": 73,
+   "name": "Band 5 Bypass",
+   "ident": "73:73",
+   "default": 0,
+   "context": "Bands=0.8, All Bands Drive=1",
+   "audioDiffDb": 1.0,
+   "audio": "ok",
+   "visualChange": 10.951,
+   "visual": "ok"
+  },
+  {
+   "index": 74,
+   "name": "Band 6 Drive",
+   "ident": "74:74",
+   "default": 0.5,
+   "context": "Bands=1, Bands Open=1",
+   "audioDiffDb": -0.9,
+   "audio": "ok",
+   "visualChange": 8.841,
+   "visual": "ok"
+  },
+  {
+   "index": 75,
+   "name": "Band 6 Ceiling",
+   "ident": "75:75",
+   "default": 0.5,
+   "context": "Bands=1, Bands Open=1, All Bands Ceiling=0.5",
+   "audioDiffDb": -13.1,
+   "audio": "ok",
+   "visualChange": 7.923,
+   "visual": "ok"
+  },
+  {
+   "index": 76,
+   "name": "Band 6 Gain",
+   "ident": "76:76",
+   "default": 0.5,
+   "context": "Bands=1, Bands Open=1",
+   "audioDiffDb": -0.3,
+   "audio": "ok",
+   "visualChange": 8.826,
+   "visual": "ok"
+  },
+  {
+   "index": 77,
+   "name": "Band 6 Solo",
+   "ident": "77:77",
+   "default": 0,
+   "context": "Bands=1, Bands Open=0",
+   "audioDiffDb": -4.9,
+   "audio": "ok",
+   "visualChange": 5.623,
+   "visual": "ok"
+  },
+  {
+   "index": 78,
+   "name": "Band 6 Mute",
+   "ident": "78:78",
+   "default": 0,
+   "context": "Bands=1, Bands Open=0",
+   "audioDiffDb": -12.1,
+   "audio": "ok",
+   "visualChange": 4.805,
+   "visual": "ok"
+  },
+  {
+   "index": 79,
+   "name": "Band 6 Bypass",
+   "ident": "79:79",
+   "default": 0,
+   "context": "Bands=1, All Bands Drive=1",
+   "audioDiffDb": 0.0,
+   "audio": "ok",
+   "visualChange": 11.75,
+   "visual": "ok"
+  },
+  {
+   "index": 80,
+   "name": "Bypass",
+   "ident": "80:1113149523",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -1.7,
+   "audio": "ok",
+   "visualChange": 2.842,
+   "visual": "excused"
+  },
+  {
+   "index": 81,
+   "name": "Bypass",
+   "ident": "81:bypass",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -1.7,
+   "audio": "ok",
+   "visualChange": 2.013,
+   "visual": "excused"
+  },
+  {
+   "index": 82,
+   "name": "Wet",
+   "ident": "82:wet",
+   "default": 1,
+   "context": "",
+   "audioDiffDb": -1.7,
+   "audio": "ok",
+   "visualChange": 2.051,
+   "visual": "excused"
+  },
+  {
+   "index": 83,
+   "name": "Delta",
+   "ident": "83:delta",
+   "default": 0,
+   "context": "",
+   "audioDiffDb": -3.5,
+   "audio": "ok",
+   "visualChange": 1.901,
+   "visual": "excused"
+  }
+ ],
+ "info": {
+  "latency": "0",
+  "fx": 0,
+  "name": "VST3: OpenClip Multiband (OpenGrid)",
+  "numParams": 84
+ },
+ "failed": []
+}

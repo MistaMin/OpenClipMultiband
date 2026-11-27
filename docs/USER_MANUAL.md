@@ -145,6 +145,9 @@ slowest one):
 That includes 64 samples for the Output Ceiling, kept when it is off. With **Zero Latency** on, the plugin reports 0
 and every clipper runs adaptive ADAA at 1x; Ghost (which needs look-ahead) runs Honey instead.
 
+The new latency is reported to the host in the same block as an Anti-Alias, Oversample or Zero Latency change. The
+plugin reports a 600 ms tail and runs at sample rates from 8 kHz up.
+
 ## Suggested start
 
 Leave Blend at 100 % and work the one band set: add Drive or lower the Ceiling until the history shows red on the
