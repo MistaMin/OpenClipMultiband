@@ -1,0 +1,5 @@
+Tree under test, 2026-11-27 09:54: 397ba8c + uncommitted changes of two sessions
+git diff HEAD sha1: cff1c47fb23f
+ 22 files changed, 110 insertions(+), 3487 deletions(-)
+OpenPluginSDK: d93d926
+At report time 10:29: git diff HEAD sha1 94161ac19036 (09:54 value cff1c47fb23f; the difference is this session's SDK pin move to d93d926 at 09:55, before the signed build)

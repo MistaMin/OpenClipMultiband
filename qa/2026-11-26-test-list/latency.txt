@@ -1,0 +1,32 @@
+Host delay compensation after Anti-Alias, Oversampling and Zero Latency changes (latency.py, REAPER 7.80), 2026-11-27
+Flint, 1 band, Mix 0, Output Ceiling off: the plug-in is a pure delay at 1x (unit test mix_zero_with_output_ceiling_off_is_a_delayed_wire).
+pdc: REAPER's plug-in delay, read at once after the parameter write and every 50 ms for 2 s ('-' = no later change: the first read already had it).
+best lag: the offset (samples) at which the render matches the source best; 0 = compensation exact.
+
+VST3 Hann-B1, 1x          pdc    0 ->  126 (later changes: -)  best lag +0  difference at best lag  -240.0 dB
+VST3 Hann-B1, 4x          pdc  126 ->  151 (later changes: -)  best lag +0  difference at best lag   -29.6 dB
+VST3 Hann-B1, 64x         pdc  151 ->  151 (later changes: -)  best lag +0  difference at best lag   -29.6 dB
+VST3 No ADAA, 64x         pdc  151 ->  151 (later changes: -)  best lag +0  difference at best lag   -29.6 dB
+VST3 Adaptive, 4x         pdc  151 ->  151 (later changes: -)  best lag +0  difference at best lag   -21.7 dB
+VST3 Zero Latency on      pdc  151 ->    0 (later changes: -)  best lag +1  difference at best lag   -15.2 dB  (Adaptive half-sample all-pass, by design)
+VST3 Zero Latency off     pdc    0 ->  151 (later changes: -)  best lag +0  difference at best lag   -21.7 dB
+VST3 Hann-B1, 1x again    pdc  151 ->  126 (later changes: -)  best lag +0  difference at best lag  -240.0 dB
+CLAP Hann-B1, 1x          pdc  126 ->  126 (later changes: -)  best lag +0  difference at best lag  -240.0 dB
+CLAP Hann-B1, 4x          pdc  126 ->  151 (later changes: -)  best lag +0  difference at best lag   -29.6 dB
+CLAP Hann-B1, 64x         pdc  151 ->  151 (later changes: -)  best lag +0  difference at best lag   -29.6 dB
+CLAP No ADAA, 64x         pdc  151 ->  151 (later changes: -)  best lag +0  difference at best lag   -29.6 dB
+CLAP Adaptive, 4x         pdc  151 ->  151 (later changes: -)  best lag +0  difference at best lag   -21.7 dB
+CLAP Zero Latency on      pdc  151 ->    0 (later changes: -)  best lag +1  difference at best lag   -15.2 dB  (Adaptive half-sample all-pass, by design)
+CLAP Zero Latency off     pdc    0 ->  151 (later changes: -)  best lag +0  difference at best lag   -21.7 dB
+CLAP Hann-B1, 1x again    pdc  151 ->  126 (later changes: -)  best lag +0  difference at best lag  -240.0 dB
+AU   Hann-B1, 1x          pdc    0 ->  126 (later changes: -)  best lag +0  difference at best lag  -240.0 dB
+AU   Hann-B1, 4x          pdc  126 ->  151 (later changes: -)  best lag +0  difference at best lag   -29.6 dB
+AU   Hann-B1, 64x         pdc  151 ->  151 (later changes: -)  best lag +0  difference at best lag   -29.6 dB
+AU   No ADAA, 64x         pdc  151 ->  151 (later changes: -)  best lag +0  difference at best lag   -29.6 dB
+AU   Adaptive, 4x         pdc  151 ->  151 (later changes: -)  best lag +0  difference at best lag   -21.7 dB
+AU   Zero Latency on      pdc  151 ->    0 (later changes: -)  best lag +1  difference at best lag   -15.2 dB  (Adaptive half-sample all-pass, by design)
+AU   Zero Latency off     pdc    0 ->  151 (later changes: -)  best lag +0  difference at best lag   -21.7 dB
+AU   Hann-B1, 1x again    pdc  151 ->  126 (later changes: -)  best lag +0  difference at best lag  -240.0 dB
+
+At 4x and above the dry copy passes the oversampling filters, so it is aligned (lag 0) but not a bit-exact delay (-29.6 dB).
+RESULT: PASS: every change reached the host at the first read and the compensation is exact

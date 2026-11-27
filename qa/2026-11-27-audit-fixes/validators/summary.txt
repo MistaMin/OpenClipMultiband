@@ -1,0 +1,4 @@
+auval: 1 succeeded line(s)
+clap-validator exit 0: 44 tests run, [1;32m34[0m passed, [1;31m0[0m failed, [1;33m0[0m warnings, [1m10[0m skipped
+pluginval VST3 exit 0: SUCCESS
+pluginval AU exit 0: SUCCESS

@@ -1,0 +1,2 @@
+OpenGrid9 LV2 repeat render (known host behaviour, 1.0.0 Beta: -19.1 dB, first ~25 ms):
+base.wav vs base2.wav: 893 differing frames; first 0, last 998 (20.8 ms) of 144000 at 48000 Hz; peak difference -19.1 dB

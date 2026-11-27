@@ -1,0 +1,8 @@
+Installed signed build of 397ba8c, 2026-11-26 23:35
+OpenClipMultiband.vst3: valid; Authority=Developer ID Application (owner); flags=0x10000(runtime); Timestamp=26. Nov 2026 at 23:33:59
+OpenClipMultiband.component: valid; Authority=Developer ID Application (owner); flags=0x10000(runtime); Timestamp=26. Nov 2026 at 23:34:04
+OpenClipMultiband.clap: valid; Authority=Developer ID Application (owner); flags=0x10000(runtime); Timestamp=26. Nov 2026 at 23:33:57
+OpenClipMultiband.aaxplugin: valid; Authority=Developer ID Application (owner); flags=0x0(none); Timestamp=26. Nov 2026 at 23:34:44
+OpenClipMultiband.lv2 (OpenClipMultiband.dylib): valid; Authority=Developer ID Application (owner); flags=0x10000(runtime); Timestamp=26. Nov 2026 at 23:33:58
+wraptool verify (AAX): The binary was signed, but not wrapped. (exit 0; as for every AAX)
+AAX flags 0x0: PACE re-signs the bundle; the released 1.0.0 Beta AAX has the same flags

@@ -1,0 +1,8 @@
+Installed signed build of the working tree (397ba8c + audit fixes, OpenPluginSDK 1f608fe), 2026-11-27 09:08
+OpenClipMultiband.vst3: valid; Authority=Developer ID Application (owner); Timestamp=27. Nov 2026 at 09:08:18
+OpenClipMultiband.component: valid; Authority=Developer ID Application (owner); Timestamp=27. Nov 2026 at 09:08:22
+OpenClipMultiband.clap: valid; Authority=Developer ID Application (owner); Timestamp=27. Nov 2026 at 09:08:17
+OpenClipMultiband.aaxplugin: valid; Authority=Developer ID Application (owner); Timestamp=27. Nov 2026 at 09:08:30
+OpenClipMultiband.dylib: valid; Authority=Developer ID Application (owner); Timestamp=27. Nov 2026 at 09:08:17
+wraptool verify (AAX): exit 0
+system copies in /Library/Audio/Plug-Ins: 0

@@ -55,39 +55,11 @@ dependencies = [
 ]
 
 [[package]]
-name = "clip-analog"
-version = "0.1.0"
-dependencies = [
- "clip-api",
-]
-
-[[package]]
 name = "clip-api"
 version = "0.1.0"
 
 [[package]]
-name = "clip-hard"
-version = "0.1.0"
-dependencies = [
- "clip-api",
-]
-
-[[package]]
 name = "clip-master"
-version = "0.1.0"
-dependencies = [
- "clip-api",
-]
-
-[[package]]
-name = "clip-soft"
-version = "0.1.0"
-dependencies = [
- "clip-api",
-]
-
-[[package]]
-name = "clip-tone"
 version = "0.1.0"
 dependencies = [
  "clip-api",

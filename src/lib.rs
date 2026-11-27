@@ -24,7 +24,7 @@ mod ui;
 
 use std::sync::{Arc, LazyLock};
 
-use clip::Clipper;
+use clip::{Clipper, Delay};
 use clip::{AA_LABELS, OS_LABELS};
 use crossover::{Crossover, Slope, DEFAULT_FREQS, FREQ_MAX, FREQ_MIN, SLOPE_LABELS};
 use olm_api::Module;
@@ -203,8 +203,6 @@ pub static INFO: LazyLock<PluginInfo> = LazyLock::new(|| {
 
 static LAYOUTS: &[IoConfig] = &[IoConfig::STEREO];
 
-/// Max latency of a clipper plus the output ceiling (ms), with headroom.
-const MAX_LATENCY_MS: f32 = 10.0;
 /// Reported tail: the worst case (all crossovers at 20 Hz, 48 dB, 6 bands) rings ~490 ms to -90 dBFS.
 const TAIL_MS: f32 = 600.0;
 const FADE_MS: f32 = 10.0;
@@ -213,35 +211,6 @@ const DIP_MS: f32 = 5.0;
 const DELTA_GLIDE_MS: f32 = 50.0;
 /// The dry twin runs this far down, inside every engine's linear region.
 const TWIN_SCALE: f32 = 1e-3;
-
-#[derive(Default)]
-struct Delay {
-    buf: Vec<f32>,
-    pos: usize,
-}
-
-impl Delay {
-    fn alloc(&mut self, len: usize) {
-        self.buf = vec![0.0; len.max(1)];
-        self.pos = 0;
-    }
-
-    fn clear(&mut self) {
-        self.buf.fill(0.0);
-    }
-
-    #[inline]
-    fn push(&mut self, x: f32, d: usize) -> f32 {
-        let n = self.buf.len();
-        if n == 0 || d == 0 {
-            return x;
-        }
-        self.buf[self.pos] = x;
-        let r = self.buf[(self.pos + n - d.min(n - 1)) % n];
-        self.pos = (self.pos + 1) % n;
-        r
-    }
-}
 
 const EMPTY_COL: [f32; 4] = [f32::INFINITY, f32::NEG_INFINITY, f32::INFINITY, f32::NEG_INFINITY];
 
@@ -344,7 +313,8 @@ pub struct OpenClipMultiband {
 }
 
 fn log_line(msg: &str) {
-    if cfg!(test) {
+    // Cargo sets CARGO_MANIFEST_DIR for integration tests too (a failing test panics through this hook); hosts never do.
+    if cfg!(test) || std::env::var_os("CARGO_MANIFEST_DIR").is_some() {
         return;
     }
     let path = if cfg!(target_os = "macos") {
@@ -759,12 +729,12 @@ impl Plugin for OpenClipMultiband {
         self.max_block = max_block.max(1);
         let sr = self.sample_rate;
         let block = self.max_block;
-        let dry_len = (MAX_LATENCY_MS * 1e-3 * sr).ceil() as usize + 2;
         self.crossover.prepare(sr);
         for c in self.clippers() {
             c.prepare(sr, block);
         }
         self.out_clip.prepare(sr, block);
+        let dry_len = self.twin.max_latency().max(self.out_clip.max_latency()) + 2;
         for b in &mut self.bands {
             b.dry_band[0].alloc(dry_len);
             b.dry_band[1].alloc(dry_len);
@@ -950,8 +920,14 @@ impl Plugin for OpenClipMultiband {
         openplugin::core::Tail::Finite((TAIL_MS * 1e-3 * self.sample_rate).ceil() as u32)
     }
 
+    /// The algorithms' time constants are designed for 8 kHz and up.
+    fn accepts_sample_rate(&self, sample_rate: f32) -> bool {
+        sample_rate >= 8_000.0 && openplugin::core::sample_rate_supported(f64::from(sample_rate))
+    }
+
     fn max_latency(&self) -> Option<usize> {
-        Some((MAX_LATENCY_MS * 1e-3 * self.sample_rate).ceil() as usize)
+        // The filters' delays are fixed in samples, so a time bound would be too small at low rates.
+        Some(self.twin.max_latency() + self.out_clip.max_latency())
     }
 
     fn meters(&self) -> MeterFrame {

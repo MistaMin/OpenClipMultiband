@@ -1,0 +1,7 @@
+desc: one NaN in the left channel at one sample (OpenClip Multiband QA)
+slider1:-1<-1,10000000,1>NaN at sample (-1: never)
+@init
+n = 0;
+@sample
+n == slider1 ? ( big = 10^300; inf = big * big; spl0 = inf - inf; );
+n += 1;

@@ -1,0 +1,9 @@
+VST3 suite start, load 158.93 133.77 97.05
+VST3 crossbuild start, load 82.68 106.96 107.35
+VST3 latency start, load 77.39 102.13 105.56
+CLAP suite start, load 56.76 93.32 102.14
+CLAP crossbuild start, load 23.98 61.31 86.91
+CLAP latency start, load 28.06 56.97 83.98
+AU suite start, load 37.74 55.20 81.78
+AU crossbuild start, load 106.82 79.94 82.26
+AU latency start, load 110.78 85.50 84.20

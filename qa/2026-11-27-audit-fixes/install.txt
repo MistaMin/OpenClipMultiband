@@ -1,0 +1,14 @@
+Installed signed build of the working tree (397ba8c + audit fixes), 2026-11-27 01:46
+OpenClipMultiband.vst3: valid; flags=0x10000(runtime) hashes=1013+3 location=embedded;Timestamp=27. Nov 2026 at 01:30:05;
+OpenClipMultiband.component: valid; flags=0x10000(runtime) hashes=967+3 location=embedded;Timestamp=27. Nov 2026 at 01:30:09;
+OpenClipMultiband.clap: valid; flags=0x10000(runtime) hashes=369+3 location=embedded;Timestamp=27. Nov 2026 at 01:30:03;
+OpenClipMultiband.aaxplugin: valid; flags=0x0(none) hashes=996+3 location=embedded;Timestamp=27. Nov 2026 at 01:46:27;
+OpenClipMultiband.dylib: valid; flags=0x10000(runtime) hashes=369+2 location=embedded;Timestamp=27. Nov 2026 at 01:30:04;
+
+OpenClipMultiband.vst3: Authority=Developer ID Application (owner)
+OpenClipMultiband.component: Authority=Developer ID Application (owner)
+OpenClipMultiband.clap: Authority=Developer ID Application (owner)
+OpenClipMultiband.aaxplugin: Authority=Developer ID Application (owner)
+OpenClipMultiband.dylib: Authority=Developer ID Application (owner)
+wraptool verify (AAX): Using the default wraptool account for this operation: mistamin The digital signature was verified:   Signature version:      kBinarySigVersion1   Signer name:            Mista Min   Signer GUID:      (exit 0)
+system copies in /Library/Audio/Plug-Ins: 0

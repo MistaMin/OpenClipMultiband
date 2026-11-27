@@ -1,0 +1,8 @@
+Screenshots from 397ba8c against docs/images (1.0.0 Beta), 2026-11-26
+4band-dark: 1080x768 vs 1080x768: pixel-identical
+4band-open-dark: 1080x768 vs 1080x768: pixel-identical
+4band-drawn-dark: 1080x768 vs 1080x768: pixel-identical
+4band-list-dark: 1080x768 vs 1080x768: pixel-identical
+6band-open-graphite: 1080x768 vs 1080x768: pixel-identical
+3band-light: 1080x768 vs 1080x768: pixel-identical
+RESULT: PASS

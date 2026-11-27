@@ -1,0 +1,6 @@
+openplugin-dev commit tester (background, on the commit), 2026-11-26:
+OpenPlugin full tier on commit 397ba8cb64b9 "Full test list: conformance, soak, fuzz, tail and bench; latency, tail and denormal fixes": PASSED (6 passed, 0 failed, 0 skipped, 954 s)
+pass: T-LINT, T-CLIPPY, T-TEST, T-SOAK, T-FUZZ, T-BENCH
+(T-TEST includes tests/tail.rs and the conformance kit's tail check; T-FUZZ runs strict_denormals and strict_hostile_output; load average 100 to 160 during the run.)
+
+GitHub Actions run 45904341821 on 397ba8c (branch test-list, then merged): Windows x64 (VST3, CLAP, LV2) success, Linux x86_64 (VST3, CLAP, LV2) success.

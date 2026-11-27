@@ -1,0 +1,4 @@
+OpenPluginSDK is not at 0000000000000000000000000000000000000000
+wrong pin: exit 1
+build continues
+right pin: exit 0

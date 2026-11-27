@@ -1,0 +1,6 @@
+Host parameter lists of 397ba8c (REAPER) against 1.0.0 Beta (../2026-11-26-sdk-port/params-1.0.0-beta-*.tsv), 2026-11-27
+VST3: 84 parameters (1.0.0 Beta 84); index, ident, name and default equal for 84
+CLAP: 83 parameters (1.0.0 Beta 83); index, ident, name and default equal for 83
+AU: 83 parameters (1.0.0 Beta 83); index, ident, name and default equal for 79; differ: [('Curve Point 1', '0.125', '0.13'), ('Curve Point 3', '0.375', '0.38'), ('Curve Point 5', '0.625', '0.63'), ('Curve Point 7', '0.875', '0.88')]
+Differences allowed: none except Curve Points 1, 3, 5, 7 (F8, whole-percent defaults, read as 13/38/63/88 % by an AU).
+RESULT: PASS

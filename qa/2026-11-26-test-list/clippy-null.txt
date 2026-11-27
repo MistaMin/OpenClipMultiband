@@ -1,0 +1,37 @@
+In-process render hashes (FNV-1a over every output sample's bits, both channels, 2 s at 48 kHz, blocks 512/100/333/512)
+old = c5091a2 (worktree), new = working tree with the clippy fixes of f31df7b; 2026-11-26
+
+default                      old 4836751d0b7cd727  new 4836751d0b7cd727  same
+heavy                        old e2dea805b489c19a  new e2dea805b489c19a  same
+alt                          old 0661761088e1b2eb  new 0661761088e1b2eb  same
+heavy input=0/5              old b10db489978bd999  new b10db489978bd999  same
+heavy input=1/5              old 3e23a2b4651712b3  new 3e23a2b4651712b3  same
+heavy input=2/5              old fa4057d30729537c  new fa4057d30729537c  same
+heavy input=3/5              old edc7b1cd9db3828b  new edc7b1cd9db3828b  same
+heavy input=4/5              old ebe63dadf592a815  new ebe63dadf592a815  same
+heavy input=5/5              old 60530244da070d48  new 60530244da070d48  same
+heavy algorithm=0/5          old 8a3f989d99feea59  new 8a3f989d99feea59  same
+heavy algorithm=1/5          old d1f0221b9eaa479c  new d1f0221b9eaa479c  same
+heavy algorithm=2/5          old eb8e802481d97836  new eb8e802481d97836  same
+heavy algorithm=3/5          old e2dea805b489c19a  new e2dea805b489c19a  same
+heavy algorithm=4/5          old e8bafdf7ae3ec439  new e8bafdf7ae3ec439  same
+heavy algorithm=5/5          old eef7292e235064c5  new eef7292e235064c5  same
+heavy aa=0/2                 old 36b0d43ccd824278  new 36b0d43ccd824278  same
+heavy aa=1/2                 old e2dea805b489c19a  new e2dea805b489c19a  same
+heavy aa=2/2                 old 4e0123164b4ad94a  new 4e0123164b4ad94a  same
+heavy oversampling=0/5       old 2e9047a294b52ca8  new 2e9047a294b52ca8  same
+heavy oversampling=1/5       old e473854c24573892  new e473854c24573892  same
+heavy oversampling=2/5       old a8a21889a4f68eb7  new a8a21889a4f68eb7  same
+heavy oversampling=3/5       old e2dea805b489c19a  new e2dea805b489c19a  same
+heavy oversampling=4/5       old 637f6c0b5b0aaba7  new 637f6c0b5b0aaba7  same
+heavy oversampling=5/5       old 8ddf30e6c5be80c0  new 8ddf30e6c5be80c0  same
+heavy allDrive=0/5           old 343c0b7daae2dd2d  new 343c0b7daae2dd2d  same
+heavy allDrive=1/5           old 3527f032da322177  new 3527f032da322177  same
+heavy allDrive=2/5           old 01dd03b1364e6eb3  new 01dd03b1364e6eb3  same
+heavy allDrive=3/5           old e2dea805b489c19a  new e2dea805b489c19a  same
+heavy allDrive=4/5           old 977569409c012645  new 977569409c012645  same
+heavy allDrive=5/5           old 261d6abdee1bb74b  new 261d6abdee1bb74b  same
+heavy zeroLatency=0/1        old e2dea805b489c19a  new e2dea805b489c19a  same
+heavy zeroLatency=1/1        old b0bbd5afc2d6c165  new b0bbd5afc2d6c165  same
+
+RESULT: all 32 bit-identical

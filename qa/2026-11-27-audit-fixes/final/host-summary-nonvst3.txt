@@ -1,0 +1,7 @@
+auval: 1 succeeded line(s)
+clap-validator exit 1: 44 tests run, 33 passed, 1 failed, 0 warnings, 10 skipped
+pluginval AU exit 0: SUCCESS
+REAPER CLAP suite exit 0
+REAPER AU suite exit 0
+OG9 AU suite exit 0
+OG9 LV2 suite exit 1

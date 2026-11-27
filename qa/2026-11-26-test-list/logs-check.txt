@@ -1,0 +1,3 @@
+Log folder before the host runs (23:37): 12953 Nov 26 19:41; 'silent output' lines: 11
+Calls of log_line in src/lib.rs: 346:fn log_line(msg: &str) { 371:            log_line(&format!("{info}")); 
+Log folder after the REAPER runs (00:04): 13037 Nov 26 23:45; 'silent output' lines: 11

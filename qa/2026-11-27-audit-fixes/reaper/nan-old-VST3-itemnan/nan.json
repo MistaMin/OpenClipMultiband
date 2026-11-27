@@ -1,0 +1,26 @@
+[
+ {
+  "case": "defaults (4 bands, ceiling on)",
+  "nan_at_sample": 48000,
+  "clean_db": -9.03,
+  "nan_db": -9.03,
+  "leftover_peak": 0.0,
+  "pass": true
+ },
+ {
+  "case": "Output Ceiling off",
+  "nan_at_sample": 48000,
+  "clean_db": -9.03,
+  "nan_db": -9.03,
+  "leftover_peak": 0.0,
+  "pass": true
+ },
+ {
+  "case": "Auto Gain, 1 band, Output +12 dB",
+  "nan_at_sample": 10,
+  "clean_db": -9.03,
+  "nan_db": -9.03,
+  "leftover_peak": 0.0,
+  "pass": true
+ }
+]

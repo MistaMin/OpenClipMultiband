@@ -1,0 +1,4 @@
+desc: makes a NaN and checks it in the same JSFX: right channel 1 if it is non-finite (OpenClip Multiband QA)
+@sample
+big = 10^300; inf = big * big; x = inf - inf;
+spl1 = (x > -1e30 && x < 1e30) ? 0.25 : 1;

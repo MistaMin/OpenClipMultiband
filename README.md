@@ -99,7 +99,6 @@ Windows and Linux builds run in GitHub Actions (`.github/workflows/build.yml`). 
 | `crates/clip` | the algorithms (`algos.rs`) and one clipper: Drive, algorithm and quality switching, latency padding |
 | `crates/clip-api` | the engine contract, the shared ADAA and oversampling stage (`shaper.rs`) and the measurement bench |
 | `crates/clip-master` | the Output Ceiling's 8x engine |
-| `crates/clip-soft`, `clip-hard`, `clip-tone`, `clip-analog` | the first design engines the algorithms were ported from |
 | `crates/api` | the module contract shared with OpenMultiband |
 | `docs/` | user manual, generated parameter reference, editor screenshots |
 | `qa/` | test ledgers and host-suite reports |

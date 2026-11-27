@@ -1,0 +1,4 @@
+
+1.0.0-beta DIAG reset: main=false thread=9684 block_running=false block_thread=b601
+1.0.0-beta panicked at tests/zz_panic_log.rs:4:5:
+deliberate: QA of the panic log (audit finding 4)

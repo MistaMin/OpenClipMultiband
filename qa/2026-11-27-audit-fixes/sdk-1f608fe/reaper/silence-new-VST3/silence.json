@@ -1,0 +1,26 @@
+[
+ {
+  "case": "no change",
+  "peak_db": -4.1,
+  "pdc_before": "0",
+  "pdc_after": "126"
+ },
+ {
+  "case": "Zero Latency on (latency 126 -> 0)",
+  "peak_db": -4.1,
+  "pdc_before": "0",
+  "pdc_after": "0"
+ },
+ {
+  "case": "Bands 3 (no latency change)",
+  "peak_db": -4.5,
+  "pdc_before": "0",
+  "pdc_after": "126"
+ },
+ {
+  "case": "Oversampling 4x (latency 126 -> 151)",
+  "peak_db": -4.2,
+  "pdc_before": "0",
+  "pdc_after": "151"
+ }
+]

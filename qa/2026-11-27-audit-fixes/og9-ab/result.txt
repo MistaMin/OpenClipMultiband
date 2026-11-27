@@ -1,0 +1,4 @@
+beta       base vs base2: -240.0 dB; 0 differing frames, last -; peak difference -240.0 dB
+new        base vs base2: -240.0 dB; 0 differing frames, last -; peak difference -240.0 dB
+beta-2     base vs base2: -240.0 dB; 0 differing frames, last -; peak difference -240.0 dB
+new-2      base vs base2: -3.5 dB; 1986 differing frames, last 2322 (48.4 ms); peak difference -3.5 dB

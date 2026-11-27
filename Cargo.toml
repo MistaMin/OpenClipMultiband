@@ -13,7 +13,7 @@ crate-type = ["cdylib", "staticlib", "rlib"]
 [dependencies]
 olm-api = { path = "crates/api" }
 clip = { path = "crates/clip" }
-# OpenPluginSDK main (19fac89) in ../../Dependencies (pinned in scripts/build.sh).
+# OpenPluginSDK main (d93d926) in ../../Dependencies (pinned in scripts/build.sh).
 openplugin = { path = "../../Dependencies/OpenPluginSDK/crates/openplugin" }
 # Text measuring for the kit: the GoodLookin DRI in the SDK's tree, the same crate the SDK uses.
 goodlookindri-shell = { path = "../../Dependencies/OpenPluginSDK/crates/goodlookindri/shell" }
@@ -27,6 +27,7 @@ members = ["crates/*"]
 [profile.release]
 opt-level = 3
 lto = "thin"
+# codegen-units stays at the default (16): 1 measured 10 % slower in every bench case (qa/2026-11-27-audit-fixes/bench-cgu).
 
 [dev-dependencies]
 openplugin = { path = "../../Dependencies/OpenPluginSDK/crates/openplugin", features = ["testing"] }

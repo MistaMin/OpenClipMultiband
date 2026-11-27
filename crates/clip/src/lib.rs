@@ -100,20 +100,25 @@ const CHUNK: usize = 32;
 /// Room for the slowest algorithm at 64x, in host samples.
 const MAX_PAD: usize = 1024;
 
+/// A delay line of up to `len` samples (the plugin's dry paths use it too).
 #[derive(Default)]
-struct Delay {
+pub struct Delay {
     buf: Vec<f32>,
     pos: usize,
 }
 
 impl Delay {
-    fn alloc(&mut self, len: usize) {
+    pub fn alloc(&mut self, len: usize) {
         self.buf = vec![0.0; len + 1];
         self.pos = 0;
     }
 
+    pub fn clear(&mut self) {
+        self.buf.fill(0.0);
+    }
+
     #[inline]
-    fn push(&mut self, x: f32, d: usize) -> f32 {
+    pub fn push(&mut self, x: f32, d: usize) -> f32 {
         let n = self.buf.len();
         if d == 0 || n == 0 {
             return x;
@@ -238,6 +243,11 @@ impl Clipper {
     pub fn latency_at(&self, zero: bool) -> usize {
         let (aa, os) = self.quality;
         if zero { 0 } else { self.lat_at.get(aa).and_then(|r| r.get(os)).copied().unwrap_or(self.max_lat) }
+    }
+
+    /// The largest latency any quality setting gives (known after `prepare`).
+    pub fn max_latency(&self) -> usize {
+        self.lat_at.iter().flatten().copied().max().unwrap_or(0)
     }
 
     fn wanted(&self) -> usize {

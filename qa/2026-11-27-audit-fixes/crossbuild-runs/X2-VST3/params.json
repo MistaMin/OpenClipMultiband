@@ -1,0 +1,1350 @@
+{
+ "saved": [
+  {
+   "value": 0.6999999881,
+   "step": 0.02083333333,
+   "ident": "0:0",
+   "name": "Input Gain",
+   "text": "10",
+   "index": 0
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "1:1",
+   "name": "Output Gain",
+   "text": "0",
+   "index": 1
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "2:2",
+   "name": "Zero Latency",
+   "text": "Off",
+   "index": 2
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "3:3",
+   "name": "Auto Gain",
+   "text": "Off",
+   "index": 3
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "4:4",
+   "name": "Delta",
+   "text": "Off",
+   "index": 4
+  },
+  {
+   "value": 1,
+   "step": 0.2,
+   "ident": "5:5",
+   "name": "Bands",
+   "text": "6",
+   "index": 5
+  },
+  {
+   "value": 0.5,
+   "step": 0.5,
+   "ident": "6:6",
+   "name": "Crossover Slope",
+   "text": "24 dB",
+   "index": 6
+  },
+  {
+   "value": 0.259383738,
+   "step": 0,
+   "ident": "7:7",
+   "name": "Crossover 1",
+   "text": "120",
+   "index": 7
+  },
+  {
+   "value": 0.5246770978,
+   "step": 0,
+   "ident": "8:8",
+   "name": "Crossover 2",
+   "text": "750",
+   "index": 8
+  },
+  {
+   "value": 0.7253637314,
+   "step": 0,
+   "ident": "9:9",
+   "name": "Crossover 3",
+   "text": "3.00 k",
+   "index": 9
+  },
+  {
+   "value": 0.8673533201,
+   "step": 0,
+   "ident": "10:10",
+   "name": "Crossover 4",
+   "text": "8.00 k",
+   "index": 10
+  },
+  {
+   "value": 0.9483659863,
+   "step": 0,
+   "ident": "11:11",
+   "name": "Crossover 5",
+   "text": "14.0 k",
+   "index": 11
+  },
+  {
+   "value": 0.6000000238,
+   "step": 0.2,
+   "ident": "12:12",
+   "name": "Algorithm",
+   "text": "Ember",
+   "index": 12
+  },
+  {
+   "value": 0.3000000119,
+   "step": 0.01,
+   "ident": "13:13",
+   "name": "Shape",
+   "text": "30",
+   "index": 13
+  },
+  {
+   "value": 0.5,
+   "step": 0.01,
+   "ident": "14:14",
+   "name": "Character",
+   "text": "50",
+   "index": 14
+  },
+  {
+   "value": 0.5,
+   "step": 0.01,
+   "ident": "15:15",
+   "name": "Single/Multi Blend",
+   "text": "50",
+   "index": 15
+  },
+  {
+   "value": 0.8999999762,
+   "step": 0.01,
+   "ident": "16:16",
+   "name": "Dry/Wet Mix",
+   "text": "90",
+   "index": 16
+  },
+  {
+   "value": 0.6000000238,
+   "step": 0.04166666667,
+   "ident": "17:17",
+   "name": "Single Drive",
+   "text": "14",
+   "index": 17
+  },
+  {
+   "value": 1,
+   "step": 0.004166666667,
+   "ident": "18:18",
+   "name": "Single Ceiling",
+   "text": "0.0",
+   "index": 18
+  },
+  {
+   "value": 1,
+   "step": 1,
+   "ident": "19:19",
+   "name": "Output Ceiling On",
+   "text": "On",
+   "index": 19
+  },
+  {
+   "value": 0.9583333135,
+   "step": 0.004166666667,
+   "ident": "20:20",
+   "name": "Output Ceiling",
+   "text": "-1.0",
+   "index": 20
+  },
+  {
+   "value": 0.5,
+   "step": 0.5,
+   "ident": "21:21",
+   "name": "Anti-Alias",
+   "text": "Adaptive ADAA",
+   "index": 21
+  },
+  {
+   "value": 0.6000000238,
+   "step": 0.2,
+   "ident": "22:22",
+   "name": "Oversampling",
+   "text": "16x",
+   "index": 22
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "23:23",
+   "name": "Bands Open",
+   "text": "Off",
+   "index": 23
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "24:24",
+   "name": "Drawn Curve",
+   "text": "Off",
+   "index": 24
+  },
+  {
+   "value": 0.1299999952,
+   "step": 0.01,
+   "ident": "25:25",
+   "name": "Curve Point 1",
+   "text": "13",
+   "index": 25
+  },
+  {
+   "value": 0.25,
+   "step": 0.01,
+   "ident": "26:26",
+   "name": "Curve Point 2",
+   "text": "25",
+   "index": 26
+  },
+  {
+   "value": 0.3799999952,
+   "step": 0.01,
+   "ident": "27:27",
+   "name": "Curve Point 3",
+   "text": "38",
+   "index": 27
+  },
+  {
+   "value": 0.5,
+   "step": 0.01,
+   "ident": "28:28",
+   "name": "Curve Point 4",
+   "text": "50",
+   "index": 28
+  },
+  {
+   "value": 0.6299999952,
+   "step": 0.01,
+   "ident": "29:29",
+   "name": "Curve Point 5",
+   "text": "63",
+   "index": 29
+  },
+  {
+   "value": 0.75,
+   "step": 0.01,
+   "ident": "30:30",
+   "name": "Curve Point 6",
+   "text": "75",
+   "index": 30
+  },
+  {
+   "value": 0.8799999952,
+   "step": 0.01,
+   "ident": "31:31",
+   "name": "Curve Point 7",
+   "text": "88",
+   "index": 31
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "32:32",
+   "name": "Curve Point 8",
+   "text": "100",
+   "index": 32
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "33:33",
+   "name": "Curve Point 9",
+   "text": "100",
+   "index": 33
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "34:34",
+   "name": "Curve Point 10",
+   "text": "100",
+   "index": 34
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "35:35",
+   "name": "Curve Point 11",
+   "text": "100",
+   "index": 35
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "36:36",
+   "name": "Curve Point 12",
+   "text": "100",
+   "index": 36
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "37:37",
+   "name": "Curve Point 13",
+   "text": "100",
+   "index": 37
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "38:38",
+   "name": "Curve Point 14",
+   "text": "100",
+   "index": 38
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "39:39",
+   "name": "Curve Point 15",
+   "text": "100",
+   "index": 39
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "40:40",
+   "name": "Curve Point 16",
+   "text": "100",
+   "index": 40
+  },
+  {
+   "value": 0.6000000238,
+   "step": 0.04166666667,
+   "ident": "41:41",
+   "name": "All Bands Drive",
+   "text": "14",
+   "index": 41
+  },
+  {
+   "value": 1,
+   "step": 0.004166666667,
+   "ident": "42:42",
+   "name": "All Bands Ceiling",
+   "text": "0.0",
+   "index": 42
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "43:43",
+   "name": "All Bands Gain",
+   "text": "0",
+   "index": 43
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "44:44",
+   "name": "Band 1 Drive",
+   "text": "0",
+   "index": 44
+  },
+  {
+   "value": 0.5,
+   "step": 0.002083333333,
+   "ident": "45:45",
+   "name": "Band 1 Ceiling",
+   "text": "0.0",
+   "index": 45
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "46:46",
+   "name": "Band 1 Gain",
+   "text": "0",
+   "index": 46
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "47:47",
+   "name": "Band 1 Solo",
+   "text": "Off",
+   "index": 47
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "48:48",
+   "name": "Band 1 Mute",
+   "text": "Off",
+   "index": 48
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "49:49",
+   "name": "Band 1 Bypass",
+   "text": "Off",
+   "index": 49
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "50:50",
+   "name": "Band 2 Drive",
+   "text": "0",
+   "index": 50
+  },
+  {
+   "value": 0.5,
+   "step": 0.002083333333,
+   "ident": "51:51",
+   "name": "Band 2 Ceiling",
+   "text": "0.0",
+   "index": 51
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "52:52",
+   "name": "Band 2 Gain",
+   "text": "0",
+   "index": 52
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "53:53",
+   "name": "Band 2 Solo",
+   "text": "Off",
+   "index": 53
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "54:54",
+   "name": "Band 2 Mute",
+   "text": "Off",
+   "index": 54
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "55:55",
+   "name": "Band 2 Bypass",
+   "text": "Off",
+   "index": 55
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "56:56",
+   "name": "Band 3 Drive",
+   "text": "0",
+   "index": 56
+  },
+  {
+   "value": 0.5,
+   "step": 0.002083333333,
+   "ident": "57:57",
+   "name": "Band 3 Ceiling",
+   "text": "0.0",
+   "index": 57
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "58:58",
+   "name": "Band 3 Gain",
+   "text": "0",
+   "index": 58
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "59:59",
+   "name": "Band 3 Solo",
+   "text": "Off",
+   "index": 59
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "60:60",
+   "name": "Band 3 Mute",
+   "text": "Off",
+   "index": 60
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "61:61",
+   "name": "Band 3 Bypass",
+   "text": "Off",
+   "index": 61
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "62:62",
+   "name": "Band 4 Drive",
+   "text": "0",
+   "index": 62
+  },
+  {
+   "value": 0.5,
+   "step": 0.002083333333,
+   "ident": "63:63",
+   "name": "Band 4 Ceiling",
+   "text": "0.0",
+   "index": 63
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "64:64",
+   "name": "Band 4 Gain",
+   "text": "0",
+   "index": 64
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "65:65",
+   "name": "Band 4 Solo",
+   "text": "Off",
+   "index": 65
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "66:66",
+   "name": "Band 4 Mute",
+   "text": "Off",
+   "index": 66
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "67:67",
+   "name": "Band 4 Bypass",
+   "text": "Off",
+   "index": 67
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "68:68",
+   "name": "Band 5 Drive",
+   "text": "0",
+   "index": 68
+  },
+  {
+   "value": 0.5,
+   "step": 0.002083333333,
+   "ident": "69:69",
+   "name": "Band 5 Ceiling",
+   "text": "0.0",
+   "index": 69
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "70:70",
+   "name": "Band 5 Gain",
+   "text": "0",
+   "index": 70
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "71:71",
+   "name": "Band 5 Solo",
+   "text": "Off",
+   "index": 71
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "72:72",
+   "name": "Band 5 Mute",
+   "text": "Off",
+   "index": 72
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "73:73",
+   "name": "Band 5 Bypass",
+   "text": "Off",
+   "index": 73
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "74:74",
+   "name": "Band 6 Drive",
+   "text": "0",
+   "index": 74
+  },
+  {
+   "value": 0.5,
+   "step": 0.002083333333,
+   "ident": "75:75",
+   "name": "Band 6 Ceiling",
+   "text": "0.0",
+   "index": 75
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "76:76",
+   "name": "Band 6 Gain",
+   "text": "0",
+   "index": 76
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "77:77",
+   "name": "Band 6 Solo",
+   "text": "Off",
+   "index": 77
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "78:78",
+   "name": "Band 6 Mute",
+   "text": "Off",
+   "index": 78
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "79:79",
+   "name": "Band 6 Bypass",
+   "text": "Off",
+   "index": 79
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "80:1113149523",
+   "name": "Bypass",
+   "text": "Off",
+   "index": 80
+  },
+  {
+   "value": 0,
+   "step": 0,
+   "ident": "81:bypass",
+   "name": "Bypass",
+   "text": "normal",
+   "index": 81
+  },
+  {
+   "value": 1,
+   "step": 0,
+   "ident": "82:wet",
+   "name": "Wet",
+   "text": "100",
+   "index": 82
+  },
+  {
+   "value": 0,
+   "step": 0,
+   "ident": "83:delta",
+   "name": "Delta",
+   "text": "normal",
+   "index": 83
+  }
+ ],
+ "reopened": [
+  {
+   "value": 0.6999999881,
+   "step": 0.02083333333,
+   "ident": "0:0",
+   "name": "Input Gain",
+   "text": "10",
+   "index": 0
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "1:1",
+   "name": "Output Gain",
+   "text": "0",
+   "index": 1
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "2:2",
+   "name": "Zero Latency",
+   "text": "Off",
+   "index": 2
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "3:3",
+   "name": "Auto Gain",
+   "text": "Off",
+   "index": 3
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "4:4",
+   "name": "Delta",
+   "text": "Off",
+   "index": 4
+  },
+  {
+   "value": 1,
+   "step": 0.2,
+   "ident": "5:5",
+   "name": "Bands",
+   "text": "6",
+   "index": 5
+  },
+  {
+   "value": 0.5,
+   "step": 0.5,
+   "ident": "6:6",
+   "name": "Crossover Slope",
+   "text": "24 dB",
+   "index": 6
+  },
+  {
+   "value": 0.259383738,
+   "step": 0,
+   "ident": "7:7",
+   "name": "Crossover 1",
+   "text": "120",
+   "index": 7
+  },
+  {
+   "value": 0.5246770978,
+   "step": 0,
+   "ident": "8:8",
+   "name": "Crossover 2",
+   "text": "750",
+   "index": 8
+  },
+  {
+   "value": 0.7253637314,
+   "step": 0,
+   "ident": "9:9",
+   "name": "Crossover 3",
+   "text": "3.00 k",
+   "index": 9
+  },
+  {
+   "value": 0.8673533201,
+   "step": 0,
+   "ident": "10:10",
+   "name": "Crossover 4",
+   "text": "8.00 k",
+   "index": 10
+  },
+  {
+   "value": 0.9483659863,
+   "step": 0,
+   "ident": "11:11",
+   "name": "Crossover 5",
+   "text": "14.0 k",
+   "index": 11
+  },
+  {
+   "value": 0.6000000238,
+   "step": 0.2,
+   "ident": "12:12",
+   "name": "Algorithm",
+   "text": "Ember",
+   "index": 12
+  },
+  {
+   "value": 0.3000000119,
+   "step": 0.01,
+   "ident": "13:13",
+   "name": "Shape",
+   "text": "30",
+   "index": 13
+  },
+  {
+   "value": 0.5,
+   "step": 0.01,
+   "ident": "14:14",
+   "name": "Character",
+   "text": "50",
+   "index": 14
+  },
+  {
+   "value": 0.5,
+   "step": 0.01,
+   "ident": "15:15",
+   "name": "Single/Multi Blend",
+   "text": "50",
+   "index": 15
+  },
+  {
+   "value": 0.8999999762,
+   "step": 0.01,
+   "ident": "16:16",
+   "name": "Dry/Wet Mix",
+   "text": "90",
+   "index": 16
+  },
+  {
+   "value": 0.6000000238,
+   "step": 0.04166666667,
+   "ident": "17:17",
+   "name": "Single Drive",
+   "text": "14",
+   "index": 17
+  },
+  {
+   "value": 1,
+   "step": 0.004166666667,
+   "ident": "18:18",
+   "name": "Single Ceiling",
+   "text": "0.0",
+   "index": 18
+  },
+  {
+   "value": 1,
+   "step": 1,
+   "ident": "19:19",
+   "name": "Output Ceiling On",
+   "text": "On",
+   "index": 19
+  },
+  {
+   "value": 0.9583333135,
+   "step": 0.004166666667,
+   "ident": "20:20",
+   "name": "Output Ceiling",
+   "text": "-1.0",
+   "index": 20
+  },
+  {
+   "value": 0.5,
+   "step": 0.5,
+   "ident": "21:21",
+   "name": "Anti-Alias",
+   "text": "Adaptive ADAA",
+   "index": 21
+  },
+  {
+   "value": 0.6000000238,
+   "step": 0.2,
+   "ident": "22:22",
+   "name": "Oversampling",
+   "text": "16x",
+   "index": 22
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "23:23",
+   "name": "Bands Open",
+   "text": "Off",
+   "index": 23
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "24:24",
+   "name": "Drawn Curve",
+   "text": "Off",
+   "index": 24
+  },
+  {
+   "value": 0.1299999952,
+   "step": 0.01,
+   "ident": "25:25",
+   "name": "Curve Point 1",
+   "text": "13",
+   "index": 25
+  },
+  {
+   "value": 0.25,
+   "step": 0.01,
+   "ident": "26:26",
+   "name": "Curve Point 2",
+   "text": "25",
+   "index": 26
+  },
+  {
+   "value": 0.3799999952,
+   "step": 0.01,
+   "ident": "27:27",
+   "name": "Curve Point 3",
+   "text": "38",
+   "index": 27
+  },
+  {
+   "value": 0.5,
+   "step": 0.01,
+   "ident": "28:28",
+   "name": "Curve Point 4",
+   "text": "50",
+   "index": 28
+  },
+  {
+   "value": 0.6299999952,
+   "step": 0.01,
+   "ident": "29:29",
+   "name": "Curve Point 5",
+   "text": "63",
+   "index": 29
+  },
+  {
+   "value": 0.75,
+   "step": 0.01,
+   "ident": "30:30",
+   "name": "Curve Point 6",
+   "text": "75",
+   "index": 30
+  },
+  {
+   "value": 0.8799999952,
+   "step": 0.01,
+   "ident": "31:31",
+   "name": "Curve Point 7",
+   "text": "88",
+   "index": 31
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "32:32",
+   "name": "Curve Point 8",
+   "text": "100",
+   "index": 32
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "33:33",
+   "name": "Curve Point 9",
+   "text": "100",
+   "index": 33
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "34:34",
+   "name": "Curve Point 10",
+   "text": "100",
+   "index": 34
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "35:35",
+   "name": "Curve Point 11",
+   "text": "100",
+   "index": 35
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "36:36",
+   "name": "Curve Point 12",
+   "text": "100",
+   "index": 36
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "37:37",
+   "name": "Curve Point 13",
+   "text": "100",
+   "index": 37
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "38:38",
+   "name": "Curve Point 14",
+   "text": "100",
+   "index": 38
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "39:39",
+   "name": "Curve Point 15",
+   "text": "100",
+   "index": 39
+  },
+  {
+   "value": 1,
+   "step": 0.01,
+   "ident": "40:40",
+   "name": "Curve Point 16",
+   "text": "100",
+   "index": 40
+  },
+  {
+   "value": 0.6000000238,
+   "step": 0.04166666667,
+   "ident": "41:41",
+   "name": "All Bands Drive",
+   "text": "14",
+   "index": 41
+  },
+  {
+   "value": 1,
+   "step": 0.004166666667,
+   "ident": "42:42",
+   "name": "All Bands Ceiling",
+   "text": "0.0",
+   "index": 42
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "43:43",
+   "name": "All Bands Gain",
+   "text": "0",
+   "index": 43
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "44:44",
+   "name": "Band 1 Drive",
+   "text": "0",
+   "index": 44
+  },
+  {
+   "value": 0.5,
+   "step": 0.002083333333,
+   "ident": "45:45",
+   "name": "Band 1 Ceiling",
+   "text": "0.0",
+   "index": 45
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "46:46",
+   "name": "Band 1 Gain",
+   "text": "0",
+   "index": 46
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "47:47",
+   "name": "Band 1 Solo",
+   "text": "Off",
+   "index": 47
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "48:48",
+   "name": "Band 1 Mute",
+   "text": "Off",
+   "index": 48
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "49:49",
+   "name": "Band 1 Bypass",
+   "text": "Off",
+   "index": 49
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "50:50",
+   "name": "Band 2 Drive",
+   "text": "0",
+   "index": 50
+  },
+  {
+   "value": 0.5,
+   "step": 0.002083333333,
+   "ident": "51:51",
+   "name": "Band 2 Ceiling",
+   "text": "0.0",
+   "index": 51
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "52:52",
+   "name": "Band 2 Gain",
+   "text": "0",
+   "index": 52
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "53:53",
+   "name": "Band 2 Solo",
+   "text": "Off",
+   "index": 53
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "54:54",
+   "name": "Band 2 Mute",
+   "text": "Off",
+   "index": 54
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "55:55",
+   "name": "Band 2 Bypass",
+   "text": "Off",
+   "index": 55
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "56:56",
+   "name": "Band 3 Drive",
+   "text": "0",
+   "index": 56
+  },
+  {
+   "value": 0.5,
+   "step": 0.002083333333,
+   "ident": "57:57",
+   "name": "Band 3 Ceiling",
+   "text": "0.0",
+   "index": 57
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "58:58",
+   "name": "Band 3 Gain",
+   "text": "0",
+   "index": 58
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "59:59",
+   "name": "Band 3 Solo",
+   "text": "Off",
+   "index": 59
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "60:60",
+   "name": "Band 3 Mute",
+   "text": "Off",
+   "index": 60
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "61:61",
+   "name": "Band 3 Bypass",
+   "text": "Off",
+   "index": 61
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "62:62",
+   "name": "Band 4 Drive",
+   "text": "0",
+   "index": 62
+  },
+  {
+   "value": 0.5,
+   "step": 0.002083333333,
+   "ident": "63:63",
+   "name": "Band 4 Ceiling",
+   "text": "0.0",
+   "index": 63
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "64:64",
+   "name": "Band 4 Gain",
+   "text": "0",
+   "index": 64
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "65:65",
+   "name": "Band 4 Solo",
+   "text": "Off",
+   "index": 65
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "66:66",
+   "name": "Band 4 Mute",
+   "text": "Off",
+   "index": 66
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "67:67",
+   "name": "Band 4 Bypass",
+   "text": "Off",
+   "index": 67
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "68:68",
+   "name": "Band 5 Drive",
+   "text": "0",
+   "index": 68
+  },
+  {
+   "value": 0.5,
+   "step": 0.002083333333,
+   "ident": "69:69",
+   "name": "Band 5 Ceiling",
+   "text": "0.0",
+   "index": 69
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "70:70",
+   "name": "Band 5 Gain",
+   "text": "0",
+   "index": 70
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "71:71",
+   "name": "Band 5 Solo",
+   "text": "Off",
+   "index": 71
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "72:72",
+   "name": "Band 5 Mute",
+   "text": "Off",
+   "index": 72
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "73:73",
+   "name": "Band 5 Bypass",
+   "text": "Off",
+   "index": 73
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "74:74",
+   "name": "Band 6 Drive",
+   "text": "0",
+   "index": 74
+  },
+  {
+   "value": 0.5,
+   "step": 0.002083333333,
+   "ident": "75:75",
+   "name": "Band 6 Ceiling",
+   "text": "0.0",
+   "index": 75
+  },
+  {
+   "value": 0.5,
+   "step": 0.02083333333,
+   "ident": "76:76",
+   "name": "Band 6 Gain",
+   "text": "0",
+   "index": 76
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "77:77",
+   "name": "Band 6 Solo",
+   "text": "Off",
+   "index": 77
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "78:78",
+   "name": "Band 6 Mute",
+   "text": "Off",
+   "index": 78
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "79:79",
+   "name": "Band 6 Bypass",
+   "text": "Off",
+   "index": 79
+  },
+  {
+   "value": 0,
+   "step": 1,
+   "ident": "80:1113149523",
+   "name": "Bypass",
+   "text": "Off",
+   "index": 80
+  },
+  {
+   "value": 0,
+   "step": 0,
+   "ident": "81:bypass",
+   "name": "Bypass",
+   "text": "normal",
+   "index": 81
+  },
+  {
+   "value": 1,
+   "step": 0,
+   "ident": "82:wet",
+   "name": "Wet",
+   "text": "100",
+   "index": 82
+  },
+  {
+   "value": 0,
+   "step": 0,
+   "ident": "83:delta",
+   "name": "Delta",
+   "text": "normal",
+   "index": 83
+  }
+ ]
+}

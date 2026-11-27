@@ -1,0 +1,7 @@
+3band-light: 1080x768 vs 1080x768: pixel-identical
+4band-dark: 1080x768 vs 1080x768: pixel-identical
+4band-drawn-dark: 1080x768 vs 1080x768: pixel-identical
+4band-list-dark: 1080x768 vs 1080x768: pixel-identical
+4band-open-dark: 1080x768 vs 1080x768: pixel-identical
+6band-open-graphite: 1080x768 vs 1080x768: pixel-identical
+RESULT: PASS

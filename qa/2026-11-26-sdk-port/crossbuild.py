@@ -9,7 +9,7 @@ Each run: one REAPER session, the plug-in on a track with the suite's test signa
 Every change gets 2 s and a warm-up render before a render, a save or a read: a render started at once after a
 change lets the change land at a time that differs from run to run, so two runs of one build differ for a moment.
 """
-import json, os, sys, time
+import json, os, subprocess, sys, time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.expanduser("~/.claude/skills/plugin-daw-test/scripts"))
@@ -60,10 +60,8 @@ def run(phase, fmt):
         b.call("render", outdir=qa, name="reopened", seconds="4")
     finally:
         json.dump(out, open(os.path.join(qa, "params.json"), "w"), indent=1)
-        try:
-            b.call("quit", timeout=10)
-        except TimeoutError:  # REAPER quits before it answers
-            pass
+        # the CLI's quit also kills REAPER by its pid file when the bridge does not answer
+        subprocess.run([sys.executable, rq.__file__, "quit", "--qa-dir", qa], capture_output=True)
 
 
 def compare(new="B"):

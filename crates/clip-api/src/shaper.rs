@@ -358,7 +358,7 @@ fn bessel_i0(x: f64) -> f64 {
 /// Kaiser half-band lowpass between `low_rate` and twice it: flat to 20 kHz, stopped from
 /// `low_rate - 20 kHz` (where images and aliases would land in 0..20 kHz), 80 dB where the length
 /// allows. The centre delay is capped at `max_m` high-rate samples. Returns the long polyphase
-/// branch h[0], h[2], ..., h[4K+2], summing to 1/2. (Design from the clip-hard crate.)
+/// branch h[0], h[2], ..., h[4K+2], summing to 1/2.
 fn halfband(low_rate: f64, max_m: usize) -> Vec<f32> {
     const ATTEN: f64 = 80.0;
     let delta = ((low_rate - 40_000.0) / (2.0 * low_rate)).max(0.02);

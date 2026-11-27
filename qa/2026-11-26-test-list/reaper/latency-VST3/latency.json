@@ -1,0 +1,98 @@
+[
+ {
+  "step": "Hann-B1, 1x",
+  "pdc_before": 0,
+  "pdc_changes": [
+   [
+    0.0,
+    0
+   ]
+  ],
+  "pdc_final": 126,
+  "render_vs_source_db": -240.0
+ },
+ {
+  "step": "Hann-B1, 4x",
+  "pdc_before": 126,
+  "pdc_changes": [
+   [
+    0.0,
+    126
+   ]
+  ],
+  "pdc_final": 151,
+  "render_vs_source_db": -29.6
+ },
+ {
+  "step": "Hann-B1, 64x",
+  "pdc_before": 151,
+  "pdc_changes": [
+   [
+    0.0,
+    151
+   ]
+  ],
+  "pdc_final": 151,
+  "render_vs_source_db": -29.6
+ },
+ {
+  "step": "No ADAA, 64x",
+  "pdc_before": 151,
+  "pdc_changes": [
+   [
+    0.0,
+    151
+   ]
+  ],
+  "pdc_final": 151,
+  "render_vs_source_db": -29.6
+ },
+ {
+  "step": "Adaptive, 4x",
+  "pdc_before": 151,
+  "pdc_changes": [
+   [
+    0.0,
+    151
+   ]
+  ],
+  "pdc_final": 151,
+  "render_vs_source_db": -20.0
+ },
+ {
+  "step": "Zero Latency on",
+  "pdc_before": 151,
+  "pdc_changes": [
+   [
+    0.0,
+    151
+   ]
+  ],
+  "pdc_final": 0,
+  "render_vs_source_db": -5.7
+ },
+ {
+  "step": "Zero Latency off",
+  "pdc_before": 0,
+  "pdc_changes": [
+   [
+    0.0,
+    0
+   ]
+  ],
+  "pdc_final": 151,
+  "render_vs_source_db": -20.0
+ },
+ {
+  "step": "Hann-B1, 1x again",
+  "pdc_before": 151,
+  "pdc_changes": [
+   [
+    0.0,
+    151
+   ]
+  ],
+  "pdc_final": 126,
+  "render_vs_source_db": -240.0
+ }
+]

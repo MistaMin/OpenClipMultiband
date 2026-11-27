@@ -72,7 +72,8 @@ impl Power {
         let mut sum = 0.0;
         for (c, x) in [l, r].into_iter().enumerate() {
             let [a, b] = &mut self.filters[c];
-            let y = b.run(a.run(f64::from(x)));
+            let x = if x.is_finite() { f64::from(x) } else { 0.0 }; // ST-2: NaN would freeze the gain
+            let y = b.run(a.run(x));
             sum += y * y;
         }
         self.avg += (sum - self.avg) * coef;

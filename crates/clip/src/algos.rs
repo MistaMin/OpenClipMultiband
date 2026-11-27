@@ -1,8 +1,7 @@
 // Copyright (c) 2026 Marcos Quirino Deida
 //! The clipping algorithms as `Shaper`s: a static curve (with antiderivative and slope, so every
 //! algorithm runs through the shared ADAA) between the stages that make each one what it is.
-//! Ported from the design crates (`clip-soft`, `clip-hard`, `clip-tone`, `clip-analog`); their
-//! REPORT.md files hold the maths and measurements.
+//! Ported from the first design engines (in the git history up to 397ba8c).
 
 use clip_api::shaper::{ftz, Glide, Pt, Shaper};
 

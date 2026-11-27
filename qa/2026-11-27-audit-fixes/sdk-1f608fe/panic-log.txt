@@ -1,0 +1,1 @@
+panic.log lines:      168 before,      168 after the failing test under cargo,      170 after the same binary without CARGO_MANIFEST_DIR (log restored afterwards:      168 lines)

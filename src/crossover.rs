@@ -357,6 +357,7 @@ impl Crossover {
             }
             for c in 0..2 {
                 let x = if c == 0 { in_l[i] as f64 } else { in_r[i] as f64 };
+                let x = if x.is_finite() { x } else { 0.0 }; // ST-2: NaN in the state never leaves
                 let ch = &mut self.ch[c];
                 let mut bands = [0.0f64; MAX_BANDS];
                 let mut rem = x;

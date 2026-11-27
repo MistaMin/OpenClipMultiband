@@ -1,0 +1,3 @@
+VST3 og9 start, load 126.07 95.02 87.97
+AU og9 start, load 97.59 99.75 91.78
+LV2 og9 start, load 150.63 122.07 103.69

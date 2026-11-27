@@ -1,0 +1,9 @@
+Installed signed build of the tree in tree.txt (OpenPluginSDK d93d926), 2026-11-27 10:06; VST3 installed after the diagnostic run
+OpenClipMultiband.component: valid; Authority=Developer ID Application (owner); Timestamp=27. Nov 2026 at 10:03:14
+OpenClipMultiband.clap: valid; Authority=Developer ID Application (owner); Timestamp=27. Nov 2026 at 10:03:11
+OpenClipMultiband.aaxplugin: valid; Authority=Developer ID Application (owner); Timestamp=27. Nov 2026 at 10:03:21
+OpenClipMultiband.dylib: valid; Authority=Developer ID Application (owner); Timestamp=27. Nov 2026 at 10:03:11
+OpenClipMultiband.vst3: valid; Authority=Developer ID Application (owner); Timestamp=27. Nov 2026 at 10:03:12
+wraptool verify (AAX): exit 0
+system copies in /Library/Audio/Plug-Ins: 0
+final VST3 installed 10:17
